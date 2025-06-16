@@ -1,0 +1,405 @@
+<div class="p-2 mt-2 flex justify-center">
+  <div class="w-[350px] sm:w-[390px] md:w-[712px] lg:w-[1000px] mt-2">
+    <div class="md:pl-5 md:ml-2">
+      <p class="text-white text-[15px]">🖐️ Hello I am,</p>
+      <h1
+        class="font-bold text-[#fff] text-[25px] md:text-[40px] lg:text-[80px] mt-3"
+      >
+        Full Stack Developer
+      </h1>
+
+      <h1 class="text-[#a7a4a4] text-[14px] md:text-[16px] text-justify mt-3">
+        I am a Full Stack Developer with 4+ years of experience delivering
+        scalable and secure web applications. I am skilled in both frontend and
+        backend technologies and create seamless user experiences while solving
+        complex business challenges. I am dedicated to driving projects forward
+        with creativity, technical expertise, and a strong focus on quality.
+      </h1>
+      <div class="p-2 mt-2">
+        <button
+          type="button"
+          (click)="scrollToJourney()"
+          class="btn-grad uppercase m-[10px] rounded-[10px] text-center text-white cursor-pointer py-[10px] px-[10px] md:py-[15px] md:px-[45px] text-[11px] md:text-[15px]"
+        >
+          Hire Me
+        </button>
+        <button
+          type="button"
+          (click)="scrollToJourney()"
+          class="btn-grad-d uppercase m-[10px rounded-[10px] text-center text-white cursor-pointer py-[10px] px-[10px] md:py-[15px] md:px-[45px] text-[11px] md:text-[15px]"
+        >
+          Discover my journey
+        </button>
+      </div>
+    </div>
+    <div class="border-cls p-2">
+      <h1 class="text-[#a7a4a4] font-bold m-2 text-center">Skills</h1>
+      <i style="color: white" class="fa-brands fa-html5"></i>
+      <i style="color: white" class="fab fa-html5"></i>
+      <div class="wrapper mt-3">
+        <div class="maeque-text fade-out-horizontal">
+          <div class="maeque-text-track">
+            <p
+              *ngFor="let skill of skillSet"
+              class="bg-white flex items-center font-bold"
+            >
+              <img
+                class="h-[20px] pr-2"
+                [src]="'assets/skills/' + skill.img + '.png'"
+              />
+              {{ skill.name }}
+            </p>
+            <p
+              aria-hidden="true"
+              class="bg-white flex items-center font-bold"
+              *ngFor="let skill of skillSet"
+            >
+              <img
+                class="h-[20px] pr-2"
+                [src]="'assets/skills/' + skill.img + '.png'"
+              />
+              {{ skill.name }}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="flex justify-center pt-3 mt-3">
+          <img
+            class="h-[200px] w-[200px] object-cover rounded-[50%]"
+            src="assets/profile-pic.jpg"
+          />
+        </div>
+        <div
+          class="hidden md:block absolute top-[52px] md:right-[137px] lg:right-[250px]"
+        >
+          <img
+            class="h-[57px]"
+            src="https://framerusercontent.com/images/8ByXL86dgyYbcyOwzHpi642Dk.svg"
+          />
+        </div>
+        <h1
+          class="hidden md:block absolute md:right-[40px] lg:right-[140px] font-medium top-[40px] text-[#cde4fe] text-[18px]"
+        >
+          4 Years of <br />
+          experience
+        </h1>
+        <div class="text-center mt-3">
+          <h1 class="text-[#9D9D9D] text-[40px] font-bold">
+            What makes me <br />
+            different?
+          </h1>
+          <p class="text-[#A7A4A4] mt-2">
+            I blend design and functionality to build impactful full-stack
+            solutions — turning ideas into reality through clean code, scalable
+            architecture, and seamless user experiences.
+          </p>
+          <div class="p-2 mt-2">
+            <a
+              download
+              href="assets/Mahendra-resume.pdf"
+              class="btn-grad uppercase m-[10px rounded-[10px] py-[10px] px-[10px] md:py-[15px] md:px-[45px] text-[11px] md:text-[15px] text-center text-white cursor-pointer inline-flex items-center"
+              >Download Resume <mat-icon> insert_drive_file</mat-icon></a
+            >
+            <!-- <button type="button" class="btn-grad-d cursor-pointer">Discover my journey</button> -->
+          </div>
+        </div>
+        <div class="flex flex-col md:flex-row justify-around mt-3">
+          <div class="text-[#A7A4A4] w-[350px] mb-2 md:w-[400px] card-bg">
+            <h1 class="text-[#e7e7e7] font-bold text-[22px]">
+              Front-end Development
+            </h1>
+            <p
+              class="text-justify text-[#A7A4A4] text-[14px] md:text-[16px] mt-4"
+            >
+              I specialize in building fast, responsive user interfaces using
+              Angular, React, and modern UI frameworks. With strong proficiency
+              in HTML, CSS, JavaScript, and TypeScript, I craft seamless,
+              accessible web experiences. I work with libraries like Angular
+              Material, Bootstrap, and Tailwind CSS to develop elegant designs,
+              and leverage RxJS for powerful reactive programming. My focus is
+              always on performance, accessibility, and clean, maintainable
+              code. I thrive in collaborative environments and continuously stay
+              updated with the latest industry trends to deliver cutting-edge
+              solutions.
+            </p>
+            <div class="flex items-center mt-4">
+              <img class="h-[20px] pr-1" src="assets/front/html.png" />
+              <img class="h-[20px] pr-1" src="assets/front/css-3.png" />
+              <img class="h-[20px] pr-1" src="assets/front/js.png" />
+              <img class="h-[20px] pr-1" src="assets/front/physics.png" />
+              <img class="h-[20px] pr-1" src="assets/front/programing.png" />
+              <img class="h-[20px] pr-1" src="assets/front/typescript.png" />
+              <img class="h-[20px] pr-1" src="assets/front/boots.png" />
+
+              <img
+                class="h-[20px] pr-1"
+                src="assets/front/tailwind-css-svgrepo-com.png"
+              />
+              <img class="h-[20px] pr-1" src="assets/front/bootstrap.png" />
+            </div>
+          </div>
+          <div class="text-[#A7A4A4] w-[350px] mb-2 md:w-[400px] card-bg">
+            <h1 class="text-[#e7e7e7] font-bold text-[22px]">
+              Back-end Development
+            </h1>
+            <p
+              class="text-[14px] text-justify text-[#A7A4A4] md:text-[16px] mt-4"
+            >
+              As a Full Stack Developer, I build robust and scalable backend
+              systems using Node.js and Express.js, seamlessly integrating with
+              databases like MySQL and MongoDB through Sequelize ORM. I write
+              clean, maintainable code that simplifies complex database
+              operations and accelerates development. I design well-structured
+              RESTful APIs that facilitate smooth communication between frontend
+              and backend, focusing on performance, security, and
+              maintainability. My backend solutions support scalable,
+              data-driven applications that deliver seamless user experiences
+              and solve real-world business challenges.
+            </p>
+
+            <div class="flex items-center mt-4">
+              @for (item of backendSkills; track $index) {
+              <img
+                class="h-[20px] pr-1"
+                [src]="'assets/backend/' + item + '.png'"
+              />
+
+              }
+            </div>
+          </div>
+        </div>
+        <div
+          #journeySection
+          class="text-white text-center border-t-[1px] border-t-[#1e1e1e] mt-3"
+        >
+          <h1 class="text-[25px] md:text-[40px] font-medium text-[#9d9d9d]">
+            In my prior experience
+          </h1>
+          <p class="text-[#A7A4A4] text-[14px] md:text-[16px] font-medium mt-2">
+            With 3.6 years of full-stack web development and design experience,
+            I've created <br />
+            seamless digital products, combining frontend creativity with
+            backend performance for well-known brands.
+          </p>
+        </div>
+
+        <div
+          class="text-white text-center border-t-[1px] border-t-[#1e1e1e] mt-3"
+        >
+          <div class="flex justify-between items-center">
+            <div class="flex items-center mt-5">
+              <img
+                class="mr-2 h-[60px] mr-4 rounded-[5px]"
+                src="assets/download.png"
+              />
+              <div>
+                <h1 class="text-[#e7e7e7] font-bold text-[14px] md:text-[24px]">
+                  Software Development Engineer II
+                </h1>
+                <P class="text-[#a7a4a4] text-left font-medium text-[14px]"
+                  >Flip Health Pvt Ltd.</P
+                >
+              </div>
+            </div>
+            <div>
+              <mat-icon
+                *ngIf="!dropdownOpen"
+                (click)="dropdownOpen = !dropdownOpen"
+                class="cursor-pointer"
+                >keyboard_arrow_down</mat-icon
+              >
+              <mat-icon
+                *ngIf="dropdownOpen"
+                (click)="dropdownOpen = !dropdownOpen"
+                class="cursor-pointer"
+                >keyboard_arrow_up</mat-icon
+              >
+            </div>
+          </div>
+
+          <div *ngIf="dropdownOpen" class="text-start">
+            <h1
+              class="text-[#e7e7e7] text-[18px] md:text-[22px] font-bold mt-4"
+            >
+              Roles & Responsibilities
+            </h1>
+            <ul
+              class="list-disc pl-5 space-y-2 animated-list text-[#a7a4a4] text-[14px] md:text-[16px] text-justify mt-3"
+            >
+              <li>
+                <strong>Delivered full lifecycle contributions</strong> across
+                the Software Development Life Cycle (SDLC), from requirements
+                gathering to post-production support.
+              </li>
+              <li>
+                <strong
+                  >Developed SEO-friendly, mobile-responsive web
+                  applications</strong
+                >
+                using Angular (v13+), Angular Material, SCSS, and React.js.
+              </li>
+              <li>
+                <strong>Boosted application performance</strong> through Angular
+                lazy loading, on-demand module loading, and code splitting.
+              </li>
+              <li>
+                <strong>Built RESTful APIs</strong> with Node.js, Express.js,
+                Sequelize ORM, and MySQL to support efficient microservices
+                communication.
+              </li>
+              <li>
+                <strong>Collaborated with Agile Scrum teams</strong>, mentored
+                junior developers, and consistently achieved over 95% sprint
+                goal completion.
+              </li>
+              <li>
+                <strong>Applied best practices in Git workflows</strong>,
+                including code reviews, pull requests, and structured branching
+                strategies to ensure high code quality and rapid delivery.
+              </li>
+              <li>
+                <strong>Gained hands-on experience with DevOps tools</strong>,
+                such as Terraform and AWS services (EC2, S3, Lambda),
+                contributing to deployment automation and cloud infrastructure
+                management.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="text-white text-center border-t-[1px] border-t-[#1e1e1e] mt-3"
+        >
+          <div class="flex justify-between items-center">
+            <div class="flex items-center mt-5">
+              <img
+                class="mr-2 h-[60px] mr-4 rounded-[6px]"
+                src="assets/download-1.png"
+              />
+              <div>
+                <h1 class="text-[#e7e7e7] font-bold text-[13px] md:text-[24px]">
+                  Full Stack Developer - Apprenticeship
+                </h1>
+                <P class="text-[#a7a4a4] text-left font-medium text-[14px]"
+                  >NxtWave</P
+                >
+              </div>
+            </div>
+            <div>
+              <mat-icon
+                *ngIf="!dropdownNxt"
+                (click)="dropdownNxt = !dropdownNxt"
+                class="cursor-pointer"
+              >
+                keyboard_arrow_down</mat-icon
+              >
+              <mat-icon
+                *ngIf="dropdownNxt"
+                (click)="dropdownNxt = !dropdownNxt"
+                class="cursor-pointer"
+              >
+                keyboard_arrow_up</mat-icon
+              >
+            </div>
+          </div>
+          <div *ngIf="dropdownNxt" class="text-left">
+            <h1
+              class="text-[#e7e7e7] text-[18px] md:text-[22px] font-bold mt-4"
+            >
+              Experience gained through roles and responsibilities at NxtWave
+            </h1>
+            <ul
+              class="list-disc pl-5 space-y-2 animated-list text-[#a7a4a4] text-[14px] md:text-[16px] text-justify mt-3"
+            >
+              <li>
+                <strong
+                  >Hands-on experience in building full-stack web
+                  applications</strong
+                >
+                using MongoDB, Express.js, React.js, MySQL, Python, JavaScript,
+                and Node.js.
+              </li>
+              <li>
+                <strong>Developed multiple mini-projects</strong> focused on
+                CRUD operations and RESTful API design, gaining practical
+                insights into both frontend and backend development.
+              </li>
+              <li>
+                <strong>Implemented best practices in version control</strong>
+                using Git, enabling streamlined collaboration and efficient
+                project management.
+              </li>
+              <li>
+                <strong>Built and deployed full-stack applications</strong> such
+                as e-commerce platforms and task management tools, showcasing
+                seamless integration of frontend and backend technologies.
+              </li>
+              <li>
+                <strong>Demonstrated expertise in database integration</strong>
+                and developing dynamic user interfaces with a focus on
+                scalability and performance.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex justify-center relative text-center text-white">
+      <img width="100%" class="h-[550px]" src="assets/content-bg.avif" />
+      <div class="absolute top-[110px]">
+        <div class="flex justify-center pt-3 mt-3">
+          <img
+            class="rounded-[50%] h-[138px] w-[138px]"
+            style="object-fit: cover"
+            src="assets/profile-pic.jpg"
+          />
+        </div>
+        <h1 class="text-[26px] text-[#e7e7e7] font-bold">Mahendra Gadi</h1>
+        <p class="text-[#a7a4a4] text-[16px]">Full Stack Developer</p>
+
+        <div #contactInfo class="flex flex-col md:flex-row items-center mt-6">
+          <!-- <div
+            class="w-[200px] md:border-r-[1px] md:border-r-[#1e1e1e] border-b-[1px] p-2 border-b-[#1e1e1e]"
+           >
+            <h1 class="text-[14px] md:text-[16px] text-[#a7a4a4] font-medium">
+              Call me on:
+            </h1>
+            <p class="text-[16px] md:text-[18px] text-[#e7e7e7] font-medium">
+              (+49) NAN
+            </p>
+          </div> -->
+          <div
+            class="w-[400px] md:border-r-[1px] md:border-r-[#1e1e1e] md:border-b-[0px] border-b-[1px] p-2 border-b-[#1e1e1e]"
+          >
+            <h1 class="text-[14px] md:text-[16px] text-[#a7a4a4] font-medium">
+              E-mail me at:
+            </h1>
+            <p class="text-[16px] md:text-[18px] text-[#e7e7e7] font-medium">
+              mahendragadi66&#64;gmail.com
+            </p>
+          </div>
+          <div
+            class="w-[200px] border-b-[1px] p-2 md:border-b-[0px] border-b-[#1e1e1e]"
+          >
+            <h1 class="text-[14px] md:text-[16px] text-[#a7a4a4] font-medium">
+              Follow me on:
+            </h1>
+            <div class="flex justify-center items-center pl-[15px] p-2">
+              <a href="https://github.com/gadimahendra" target="_blank">
+                <img class="h-[31px] pr-2" src="assets/git.png" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/mahendra-gadi/"
+                target="_blank"
+              >
+                <img class="h-[31px]" src="assets/linkedin.png" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

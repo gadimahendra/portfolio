@@ -1,0 +1,117 @@
+<div class="flex md:justify-center sticky top-0 z-1">
+  <div
+    class="bg-[#000] flex justify-center nav-sec w-[1000px] h-[80px] relative border-cls"
+  >
+    <img src="assets/navbar-bg.jpg" alt="xyz" />
+  </div>
+  <div class="absolute w-[397px] md:w-[572px] top-[12px]">
+    <div class="flex justify-between items-center">
+      <div class="flex items-center">
+        <div class="pr-3">
+          <img
+            class="h-[50px] w-[50px] object-cover rounded-[50%]"
+            src="assets/profile-pic.jpg"
+          />
+        </div>
+        <div>
+          <h1
+            class="text-[#a7a4a4] text-red text-[16px] md:text-[18px] font-medium"
+          >
+            Gadi Mahendra
+          </h1>
+          <div class="status">
+            <div class="active"></div>
+            <span class="text-[#a7a4a4] text-[12px] md:text-[14px]"
+              >Available for work</span
+            >
+          </div>
+        </div>
+      </div>
+      <div class="hidden sm:hidden md:flex justify-around">
+        <div
+          class="cursor-pointer onhvr relative flex items-center justify-center h-[41px] w-[41px] rounded-[50%]"
+        >
+          <div>
+            <mat-icon
+              (click)="navigateTo()"
+              style="color: white"
+              class="pt-[3px]"
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="home"
+            ></mat-icon>
+          </div>
+          <div class="tooltip-text absolute">Home</div>
+        </div>
+
+        <!-- <div
+          class="cursor-pointer onhvr1 flex items-center justify-center h-[41px] w-[41px] rounded-[50%]"
+        >
+          <div>
+            <mat-icon style="color: white" class="pt-[3px]"
+              >account_circle</mat-icon
+            >
+          </div>
+          <div class="tooltip-text absolute">Profile</div>
+        </div> -->
+        <div
+          class="cursor-pointer onhvr2 flex items-center justify-center h-[41px] w-[41px] rounded-[50%]"
+        >
+          <div>
+            <mat-icon
+              (click)="navigateToexp('Exp')"
+              style="color: white"
+              class="pt-[3px]"
+              >business_center
+            </mat-icon>
+          </div>
+          <div class="tooltip-text absolute">Experience</div>
+        </div>
+        <div
+          class="cursor-pointer onhvr3 flex items-center justify-center h-[41px] w-[41px] rounded-[50%]"
+        >
+          <div>
+            <mat-icon
+              (click)="navigateToexp('contact')"
+              style="color: white"
+              class="pt-[3px] mr-2"
+            >
+              call</mat-icon
+            >
+          </div>
+          <div class="tooltip-text absolute">Contact</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="flex justify-center items-center pt-5  ">
+        <div class="nav-sec">
+            <img src="assets/navbar-bg.jpg" alt="xyz" class="navbar-image" />
+        </div>
+
+        <div class="flex  justify-content-between items-center absolute">
+
+            <div class="flex   items-center">
+                <div class="pr-3">
+                    <img class="h-[50px] w-[50px] rounded-[50%]" src="../../assets/DSC05749.JPG" />
+                </div>
+               
+            </div>
+
+            <div>
+                <mat-icon style="color: white;" aria-hidden="false" aria-label="Example home icon"
+                    fontIcon="home"></mat-icon>
+                <mat-icon style="color: white;" aria-hidden="false" aria-label="Example home icon"
+                    fontIcon="home"></mat-icon><mat-icon style="color: white;" aria-hidden="false"
+                    aria-label="Example home icon" fontIcon="home"></mat-icon><mat-icon style="color: white;"
+                    aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+            </div>
+
+
+        </div>
+    </div> -->
+</div>
+<!-- <mat-slide-toggle>Toggle me!</mat-slide-toggle> -->
+<!-- <div>
+    <i class="fas fa-user"></i>
+</div> -->

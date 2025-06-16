@@ -1,0 +1,123 @@
+.btn-class {
+    border-color: rgba(0, 0, 0, 0);
+    border: 1px solid;
+    box-shadow: rgba(205, 228, 254, 0.5) 0px 0px 5px 0px;
+    padding: 10px 20px 10px 20px;
+    background-color: rgb(138, 117, 253);
+    border-radius: 5px;
+    text-align: center;
+    opacity: 1;
+
+
+}
+
+.btn-grad {
+    background-image: linear-gradient(to right, #77A1D3 0%, #79CBCA 51%, #77A1D3 100%)
+}
+
+.btn-grad-d {
+    background-image: linear-gradient(to left, #27272700 0%, #272727 51%, #000000 100%);
+}
+
+.btn-grad {
+    transition: 0.5s;
+    background-size: 200% auto;
+    box-shadow: 0 0 5px #eee;
+
+}
+
+.btn-grad-d {
+    transition: 0.5s;
+    background-size: 200% auto;
+    box-shadow: 0 0 5px #eee;
+}
+
+.btn-grad-d:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 0 15px #eee;
+}
+
+.btn-grad:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 0 10px #eee;
+}
+
+.border-cls {
+    border-top: 1px solid #1e1e1e;
+    border-bottom: 1px solid #1e1e1e;
+}
+
+
+.wrapper {
+    padding: 10px;
+    font-size: 14px;
+}
+
+.maeque-text {
+    overflow: clip;
+}
+
+.fade-out-horizontal {
+    mask-image: linear-gradient(to right,
+            transparent,
+            black 5rem,
+            black calc(100% - 5rem), transparent);
+}
+
+.maeque-text-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: marque-move-text 50s linear infinite;
+}
+
+.maeque-text p {
+    border: 1px solid white;
+    border-radius: 15px;
+    padding: 10px 5px 10px 5px;
+}
+
+@keyframes marque-move-text {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.card-bg {
+    background: linear-gradient(180deg, var(--token-a924df73-d0cb-485d-9ce6-aceda64e54b4, rgb(19, 21, 25))
+        0%, rgba(19, 21, 25, 0.3) 100%);
+    padding: 25px;
+    border-radius: 15px;
+    border: 0.5px solid #2d2d2d;
+}
+
+.animated-list li {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.animated-list li:nth-child(1) { animation-delay: 0s; }
+.animated-list li:nth-child(2) { animation-delay: 0.1s; }
+.animated-list li:nth-child(3) { animation-delay: 0.2s; }
+.animated-list li:nth-child(4) { animation-delay: 0.3s; }
+.animated-list li:nth-child(5) { animation-delay: 0.4s; }
+.animated-list li:nth-child(6) { animation-delay: 0.5s; }
+.animated-list li:nth-child(7) { animation-delay: 0.6s; }
+
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.nav-sec {
+    filter: brightness(1.0) contrast(0.8);
+}
