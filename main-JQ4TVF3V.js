@@ -70,7 +70,7 @@ ${n.map((r,i)=>`${i+1}) ${r.toString()}`).join(`
               <li>Plan Upgrades \u2013 Option to upgrade to higher-tier plans anytime.</li>
               <li>Subscription Management \u2013 Easy access to manage current plans and account details.</>
               <li>Implemented a dashboard displaying key metrics such as the number of employees onboarded, tickets raised, orders placed and canceled, and overall application usage statistics.</li>
-              <li>Improved overall operational efficiency and user management.<li>
+              <li>Improved overall operational efficiency and user management.</li>
           </ul>
            <div class="bg-[#313131] rounded-sm pl-4 p-2 mt-2">
            <small>Technologies Used : </small> 
