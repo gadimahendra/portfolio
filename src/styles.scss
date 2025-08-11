@@ -2,6 +2,15 @@
 @use "tailwindcss" as *;
 // @import "tailwindcss";x`
 
-html, body { height: 100%;box-sizing: border-box; max-width: 100%;
-  overflow-x: hidden; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}

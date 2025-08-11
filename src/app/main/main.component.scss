@@ -22,28 +22,26 @@
 .btn-grad {
     transition: 0.5s;
     background-size: 200% auto;
-    box-shadow: 0 0 5px #eee;
 
 }
 
 .btn-grad-d {
     transition: 0.5s;
     background-size: 200% auto;
-    box-shadow: 0 0 5px #eee;
 }
 
 .btn-grad-d:hover {
     background-position: right center;
     color: #fff;
     text-decoration: none;
-    box-shadow: 0 0 15px #eee;
+    // box-shadow: 0 0 15px #eee;
 }
 
 .btn-grad:hover {
     background-position: right center;
     color: #fff;
     text-decoration: none;
-    box-shadow: 0 0 10px #eee;
+    // box-shadow: 0 0 10px #eee;
 }
 
 .border-cls {
@@ -78,7 +76,7 @@
 .maeque-text p {
     border: 1px solid white;
     border-radius: 15px;
-    padding: 10px 5px 10px 5px;
+    padding: 10px 10px;
 }
 
 @keyframes marque-move-text {
@@ -88,33 +86,52 @@
 }
 
 .card-bg {
-    background: linear-gradient(180deg, var(--token-a924df73-d0cb-485d-9ce6-aceda64e54b4, rgb(19, 21, 25))
-        0%, rgba(19, 21, 25, 0.3) 100%);
+    background: linear-gradient(180deg, var(--token-a924df73-d0cb-485d-9ce6-aceda64e54b4, rgb(19, 21, 25)) 0%, rgba(19, 21, 25, 0.3) 100%);
     padding: 25px;
     border-radius: 15px;
     border: 0.5px solid #2d2d2d;
 }
 
 .animated-list li {
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 0.5s ease forwards;
 }
 
-.animated-list li:nth-child(1) { animation-delay: 0s; }
-.animated-list li:nth-child(2) { animation-delay: 0.1s; }
-.animated-list li:nth-child(3) { animation-delay: 0.2s; }
-.animated-list li:nth-child(4) { animation-delay: 0.3s; }
-.animated-list li:nth-child(5) { animation-delay: 0.4s; }
-.animated-list li:nth-child(6) { animation-delay: 0.5s; }
-.animated-list li:nth-child(7) { animation-delay: 0.6s; }
+.animated-list li:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.animated-list li:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.animated-list li:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.animated-list li:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.animated-list li:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+.animated-list li:nth-child(6) {
+    animation-delay: 0.5s;
+}
+
+.animated-list li:nth-child(7) {
+    animation-delay: 0.6s;
+}
 
 
 @keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
