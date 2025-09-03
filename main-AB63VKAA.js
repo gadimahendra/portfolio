@@ -91,7 +91,7 @@ import{$ as Qe,$a as He,A as Fi,Aa as mo,Ab as xo,B as ae,Ba as go,Bb as at,C as
           </ul>
           <div class="bg-[#0e141b] rounded-sm pl-4 p-2 mt-2">
            <small>Technologies Used : </small> 
-<small>Angular 18, TypeScript, RxJS, Tailwind CSS, Angular Material, REST APIs, Jasmine, Karma, Hugging face </small>
+<small>React, TypeScript, Redux, Tailwind CSS, REST APIs, Hugging face </small>
 
           </div>
         
