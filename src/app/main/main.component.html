@@ -267,24 +267,52 @@
 
     </div>
 
-    <div class="p-3">
+    <div class="p-3 ">
+      <!-- appFadeInOnScroll [from]="i%2==0 ? 'left':'right'" -->
 
       <h1 class="text-[25px] text-center md:text-[40px] font-bold text-[#fff]">Projects</h1>
-      <div *ngFor="let project of projects;let i=index" class="border-t-[1px] border-t-[#1e1e1e]">
-        <div appFadeInOnScroll [from]="i%2==0 ? 'left':'right'" class=" mt-2   select-none">
-          <h3 class="text-xl text-[#fff] font-semibold">
-            {{ project.title }}
-          </h3>
-          <div class="mt-3 text-gray-300 text-sm md:text-base leading-relaxed pl-2 text-justify "
-            [innerHTML]="project?.description">
+      <div class="relative mt-2 h-[58vh]  ">
+        <div class="project-slider" [class.next]="direction === 'next'" [class.prev]="direction === 'prev'">
+          <div *ngFor="let project of visibleProjects; let i = index"
+            class="border-t-[1px] mb-[10px] project-card relative overflow-scroll  h-[58vh] custm-bg rounded-[18px] p-[15px] border-t-[#1e1e1e]">
+
+            <div class="mt-2 select-none ">
+              <div class="flex items-center justify-between">
+                <h3 class="text-xl text-[#fff] font-semibold">{{ project.title }}</h3>
+                <div>
+                  <a class="text-gray-300 " href="https://movies-web-app-git-main-gadimahendras-projects.vercel.app/"
+                    target="_blank" *ngIf="project.title == 'Movie Explorer'">Open in Browser</a>
+                </div>
+              </div>
+              <div class="mt-3 text-gray-300 text-sm md:text-base leading-relaxed pl-2 text-justify"
+                [innerHTML]="project?.description">
+              </div>
+              <div class="bg-[#252d37]  sticky bottom-[-16px] text-white rounded-sm pl-4 p-2 mt-2">
+                <small>Technologies Used : </small>
+                <small>{{project.tech_stack}} </small>
+
+              </div>
+            </div>
           </div>
-          <mat-icon class="transition-transform duration-300" [class.rotate-180]="project.open">
-            keyboard_arrow_down
-          </mat-icon>
         </div>
 
-      </div>
 
+      </div>
+      <div class="flex justify-end mt-3 ">
+        <button
+          class="{{currentIndex === 0?'':'btn-grad-d'}}  uppercase rounded-[8px] text-center text-white cursor-pointer py-2 px-4 text-[10px] mr-1 w-[100px]"
+          (click)="previousProject()" [disabled]="currentIndex === 0" [class.opacity-50]="currentIndex === 0">
+          Previous
+        </button>
+
+        <button
+          class="{{currentIndex  == projects.length -1?'':'btn-grad-d'}}  uppercase rounded-[8px] text-center text-white cursor-pointer py-1 px-3 text-[10px] w-[100px]"
+          (click)="nextProject()" [disabled]="currentIndex  == projects.length -1"
+          [class.opacity-50]="currentIndex  == projects.length -1">
+          Next
+        </button>
+
+      </div>
 
       <div appFadeInOnScroll from="bottom" class="flex justify-center relative text-center text-white mt-4">
         <img width="100%" class="h-[550px]" src="assets/content-bg.avif" />
@@ -296,16 +324,6 @@
           <p class="text-[#fff] font-light text-[16px]">Full Stack Developer</p>
 
           <div #contactInfo class="flex flex-col md:flex-row items-center mt-6">
-            <!-- <div
-            class="w-[200px] md:border-r-[1px] md:border-r-[#1e1e1e] border-b-[1px] p-2 border-b-[#1e1e1e]"
-           >
-            <h1 class="text-[14px] md:text-[16px] text-[#a7a4a4] font-medium">
-              Call me on:
-            </h1>
-            <p class="text-[16px] md:text-[18px] text-[#e7e7e7] font-medium">
-              (+49) NAN
-            </p>
-          </div> -->
             <div
               class="w-[400px] md:border-r-[1px] md:border-r-[#1e1e1e] md:border-b-[0px] border-b-[1px] p-2 border-b-[#1e1e1e]">
               <h1 class="text-[14px] md:text-[16px] text-[#fff] font-medium">
