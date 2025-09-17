@@ -32,11 +32,11 @@
         <div class="maeque-text fade-out-horizontal">
           <div class="maeque-text-track">
             <p *ngFor="let skill of skillSet" class="bg-white flex items-center font-bold">
-              <img class="h-[20px] pr-2" [src]="'assets/skills/' + skill.img + '.png'" />
+              <img class="h-[20px] pr-2" [alt]="skill.name" [src]="'../../assets/skills/' + skill.img + '.png'" />
               {{ skill.name }}
             </p>
             <p aria-hidden="true" class="bg-white flex items-center font-bold" *ngFor="let skill of skillSet">
-              <img class="h-[20px] pr-2" [src]="'assets/skills/' + skill.img + '.png'" />
+              <img class="h-[20px] pr-2" [alt]="skill.name" [src]="'../../assets/skills/' + skill.img + '.png'" />
               {{ skill.name }}
             </p>
           </div>
@@ -90,16 +90,16 @@
               solutions.
             </p>
             <div class="flex items-center mt-4">
-              <img class="h-[20px] pr-1" src="assets/front/html.png" />
-              <img class="h-[20px] pr-1" src="assets/front/css-3.png" />
-              <img class="h-[20px] pr-1" src="assets/front/js.png" />
-              <img class="h-[20px] pr-1" src="assets/front/physics.png" />
-              <img class="h-[20px] pr-1" src="assets/front/programing.png" />
-              <img class="h-[20px] pr-1" src="assets/front/typescript.png" />
-              <img class="h-[20px] pr-1" src="assets/front/boots.png" />
+              <img class="h-[20px] pr-1" alt="skills" src="../../assets/front/html.png" />
+              <img class="h-[20px] pr-1" alt="skills" src="../../assets/front/css-3.png" />
+              <img class="h-[20px] pr-1" alt="skills" src="../../assets/front/js.png" />
+              <img class="h-[20px] pr-1" alt="skills" src="../../assets/front/physics.png" />
+              <img class="h-[20px] pr-1" alt="skills" src="../../assets/front/programing.png" />
+              <img class="h-[20px] pr-1" alt="skills" src="../../assets/front/typescript.png" />
+              <img class="h-[20px] pr-1" alt="skills" src="../../assets/front/boots.png" />
 
-              <img class="h-[20px] pr-1" src="assets/front/tailwind-css-svgrepo-com.png" />
-              <img class="h-[20px] pr-1" src="assets/front/bootstrap.png" />
+              <img class="h-[20px] pr-1" alt="skills" src="../../assets/front/tailwind-css-svgrepo-com.png" />
+              <img class="h-[20px] pr-1" alt="skills" src="../../assets/front/bootstrap.png" />
             </div>
           </div>
           <div appFadeInOnScroll from="right" class="text-[#fff] w-[350px] mb-2 md:w-[400px] card-bg">
@@ -121,7 +121,7 @@
 
             <div class="flex items-center mt-4">
               @for (item of backendSkills; track $index) {
-              <img class="h-[20px] pr-1" [src]="'assets/backend/' + item + '.png'" />
+              <img alt="skills" class="h-[20px] pr-1" [src]="'../../assets/backend/' + item + '.png'" />
 
               }
             </div>

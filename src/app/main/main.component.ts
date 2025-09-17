@@ -5,6 +5,7 @@ import { SharedService } from '../services/shared.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { FadeInOnScrollDirective } from '../fade-in-on-scroll.directive';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 
 
@@ -84,7 +85,6 @@ export class MainComponent implements OnInit {
     })
 
     this.projects = this._shared.getProjects()
-
   }
 
   scrollToJourney(loc: string) {
@@ -104,11 +104,17 @@ export class MainComponent implements OnInit {
 
   direction: 'next' | 'prev' = 'next';
 
+
   nextProject() {
     if (this.currentIndex < this.projects.length - 1) {
       this.direction = 'next'
       this.currentIndex += 1;
     }
+
+
+
+
+
   }
 
 
