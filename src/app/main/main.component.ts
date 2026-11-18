@@ -1,137 +1,69 @@
-import { CommonModule, NgFor, NgIf, NgStyle, isPlatformBrowser } from '@angular/common';
-import { Component, ElementRef, OnInit, ViewChild, AfterViewInit, PLATFORM_ID, Inject } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
-import { SharedService } from '../services/shared.service';
-import { DomSanitizer } from '@angular/platform-browser';
+import { Component, HostListener, computed, signal } from '@angular/core';
 import { FadeInOnScrollDirective } from '../fade-in-on-scroll.directive';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { BehaviorSubject, Subject } from 'rxjs';
-
-
-
-
+import { InViewDirective } from '../in-view.directive';
+import { CountUpDirective } from '../count-up.directive';
+import {
+  SKILL_LEVELS,
+  CERTIFICATES,
+  EXPERIENCE,
+  LANGUAGES,
+  MARQUEE,
+  PROFILE,
+  PROJECTS,
+  Project,
+  SKILL_GROUPS,
+  STATS,
+} from '../portfolio.data';
 
 @Component({
   selector: 'app-main',
-  imports: [
-    NgFor,
-    MatIconModule,
-    NgIf,
-    FadeInOnScrollDirective,
-    MatDialogModule,
-    CommonModule
-
-  ],
+  imports: [FadeInOnScrollDirective, InViewDirective, CountUpDirective],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss',
 })
-export class MainComponent implements OnInit {
+export class MainComponent {
+  readonly profile = PROFILE;
+  readonly stats = STATS;
+  readonly skillGroups = SKILL_GROUPS;
+  readonly skillLevels = SKILL_LEVELS;
+  readonly marquee = MARQUEE;
+  readonly experience = EXPERIENCE;
+  readonly certificates = CERTIFICATES;
+  readonly languages = LANGUAGES;
+  readonly year = new Date().getFullYear();
 
-  dropdownOpen: boolean = false
-  dropdownNxt: boolean = false
+  /** Index of the expanded experience entry (first one open by default). */
+  readonly openExp = signal<number | null>(0);
 
-  projects: any = []
-  constructor(
-    private _shared: SharedService,
+  readonly filters = ['All', 'Tech Navitas', 'Flip Health', 'Personal project'];
+  readonly activeFilter = signal('All');
+  readonly projects = computed(() => {
+    const f = this.activeFilter();
+    return f === 'All' ? PROJECTS : PROJECTS.filter((p) => p.company === f);
+  });
 
-    private dialog: MatDialog
-  ) {
+  readonly selected = signal<Project | null>(null);
 
+  toggleExp(i: number) {
+    this.openExp.update((cur) => (cur === i ? null : i));
   }
 
-  skillSet: any[] = [
-    { name: 'Html5', img: 'html' },
-    { name: 'Css', img: 'css-3' },
-    { name: 'Javascript', img: 'java-script-logo' },
-    { name: 'TypeScript', img: 'html' },
-    { name: 'Angular', img: 'angularjs' },
-    { name: 'React', img: 'atom' },
-    { name: 'Bootstrap', img: 'bootstrap' },
-    { name: 'Tailwind CSS', img: 'icons8-tailwind-css-50' },
-    { name: 'Node Js', img: 'developer' },
-    { name: 'Angular Material', img: 'icons8-angularjs-50' },
-    { name: 'Express Js', img: 'icons8-express-js-48' },
-    { name: 'Mysql', img: 'mysql' },
-    { name: 'Squelize', img: 'sequelize' },
-    { name: 'Terraform', img: 'terraform' },
-    { name: 'AWS', img: 'file' },
-    { name: 'Apache Tomcat', img: 'icons8-apache-24' },
-  ]
-
-
-
-  backendSkills: string[] = [
-    'express-js', 'mongo-db', 'mysql', 'nodejs', 'python'
-  ]
-
-  @ViewChild('journeySection') journeySection!: ElementRef;
-
-  @ViewChild('contactInfo') contactInfo!: ElementRef
-
-  currentIndex = 0;
-
-
-
-
-
-
-  ngOnInit(): void {
-    
-    this._shared.cuurrentVal.subscribe((res: any) => {
-      if (res == 'Exp') {
-        this.journeySection?.nativeElement.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        this.contactInfo?.nativeElement.scrollIntoView({ behavior: 'smooth' })
-      }
-    })
-
-    this.projects = this._shared.getProjects()
+  openProject(p: Project) {
+    this.selected.set(p);
+    document.body.style.overflow = 'hidden';
   }
 
-  scrollToJourney(loc: string) {
-    if (loc == 'Exp') {
-      console.log('xejee');
-      this.journeySection?.nativeElement.scrollIntoView({ behavior: 'smooth' })
-    } else {
-      this.contactInfo.nativeElement.scrollIntoView({ behavior: 'smooth' });
-    }
-
+  closeProject() {
+    this.selected.set(null);
+    document.body.style.overflow = '';
   }
 
-
-  get visibleProjects() {
-    return this.projects.slice(this.currentIndex, this.currentIndex + 1);
+  @HostListener('document:keydown.escape')
+  onEsc() {
+    if (this.selected()) this.closeProject();
   }
 
-  direction: 'next' | 'prev' = 'next';
-
-
-  nextProject() {
-    if (this.currentIndex < this.projects.length - 1) {
-      this.direction = 'next'
-      this.currentIndex += 1;
-    }
-
-
-
-
-
+  scrollTo(id: string) {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
-
-
-  previousProject() {
-    if (this.currentIndex > 0) {
-      this.direction = 'prev'
-      this.currentIndex -= 1;
-    }
-  }
-
-
-
-
-
-
-
-
-
 }

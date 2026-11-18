@@ -1,354 +1,314 @@
-<div class="p-2 mt-2 flex justify-center">
-  <div class="w-[350px] sm:w-[390px] md:w-[712px] lg:w-[1000px] mt-2">
-    <div appFadeInOnScroll from="right" class="md:pl-5 md:ml-2">
-      <p class="text-white text-[15px]">🖐️ Hello I am,</p>
-      <h1 class="font-bold  fade-box  text-[#fff] text-[25px] md:text-[40px] lg:text-[80px] mt-3">
-        Full Stack Developer
-      </h1>
+<!-- ============ HERO ============ -->
+<section id="home" class="hero container">
+  <div class="hero-copy" appFadeInOnScroll from="left">
+    <span class="eyebrow"><span class="pulse"></span> Available for new opportunities</span>
+    <h1 class="display">
+      <span class="line"><span>Crafting <em>elegant</em>,</span></span>
+      <span class="line"><span>high-performance</span></span>
+      <span class="line"><span>web experiences.</span></span>
+    </h1>
+    <p class="lead">{{ profile.summary }}</p>
 
-      <h1 class="text-[#fff] text-[14px] font-light md:text-[16px] text-justify mt-3">
-        With 4+ years of experience delivering
-        scalable and secure web applications. I am skilled in both frontend and
-        backend technologies and create seamless user experiences while solving
-        complex business challenges. I am dedicated to driving projects forward
-        with creativity, technical expertise, and a strong focus on quality.
-      </h1>
-      <div class="p-2 mt-2">
-        <button type="button" (click)="scrollToJourney('con')"
-          class="btn-grad-d uppercase m-[10px] rounded-[10px] text-center text-white cursor-pointer py-[10px] px-[10px] md:py-[15px] md:px-[45px] text-[11px] md:text-[15px]">
-          Hire Me
-        </button>
-        <!-- <button type="button" (click)="scrollToJourney('EXP')"
-          class="btn-grad-d uppercase m-[10px rounded-[10px] text-center text-white cursor-pointer py-[10px] px-[10px] md:py-[15px] md:px-[45px] text-[11px] md:text-[15px]">
-          Discover my journey
-        </button> -->
-      </div>
-    </div>
-    <div class="border-cls p-2">
-      <h1 appFadeInOnScroll from="left" class="text-[#fff] text-[18px] font-bold mt-3 mb-3 text-center">Skills</h1>
-      <i style="color: white" class="fa-brands fa-html5"></i>
-      <i style="color: white" class="fab fa-html5"></i>
-      <div appFadeInOnScroll from="right" class="wrapper mt-3">
-        <div class="maeque-text fade-out-horizontal">
-          <div class="maeque-text-track">
-            <p *ngFor="let skill of skillSet" class="bg-white flex items-center font-bold">
-              <img class="h-[20px] pr-2" [alt]="skill.name" [src]="'/portfolio/assets/skills/' + skill.img + '.png'" />
-              {{ skill.name }}
-            </p>
-            <p aria-hidden="true" class="bg-white flex items-center font-bold" *ngFor="let skill of skillSet">
-              <img class="h-[20px] pr-2" [alt]="skill.name" [src]="'/portfolio/assets/skills/' + skill.img + '.png'" />
-              {{ skill.name }}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="relative">
-        <div appFadeInOnScroll from="bottom" class="flex justify-center pt-3 mt-3">
-          <img class="h-[200px] w-[200px] object-cover rounded-[50%]" alt="profile" src="assets/profile-pic.jpg" />
-        </div>
-        <div class="hidden md:block absolute top-[52px] md:right-[137px] lg:right-[250px]">
-          <img class="h-[57px]" alt="s-line" src="https://framerusercontent.com/images/8ByXL86dgyYbcyOwzHpi642Dk.svg" />
-        </div>
-        <h1
-          class="hidden md:block absolute md:right-[40px] lg:right-[140px] font-medium top-[40px] text-[#cde4fe] text-[18px]">
-          4 Years of <br />
-          experience
-        </h1>
-        <div class="text-center mt-3">
-          <h1 appFadeInOnScroll from="bottom" class="text-[#fff] text-[40px] font-bold">
-            What makes me
-            different?
-          </h1>
-          <p appFadeInOnScroll from="bottom" class="text-[#fff] mt-2 font-light">
-            I blend design and functionality to build impactful full-stack
-            solutions — turning ideas into reality through clean code, scalable
-            architecture, and seamless user experiences.
-          </p>
-          <div appFadeInOnScroll from="bottom" class="p-2 mt-4 mb-4">
-            <a download href="assets/Mahendra-resume.pdf"
-              class="btn-grad uppercase m-[10px rounded-[10px] py-[10px] px-[10px] md:py-[15px] md:px-[45px] text-[11px] md:text-[15px] text-center text-white cursor-pointer inline-flex items-center">Download
-              Resume <mat-icon> insert_drive_file</mat-icon></a>
-            <!-- <button type="button" class="btn-grad-d cursor-pointer">Discover my journey</button> -->
-          </div>
-        </div>
-        <div class="flex flex-col md:flex-row justify-around mt-3">
-          <div appFadeInOnScroll from="left" class="text-[#A7A4A4] w-[350px] mb-2 md:w-[400px] card-bg">
-            <h1 class="text-[#fff] font-bold text-[22px]">
-              Front-end Development
-            </h1>
-            <p class="text-justify text-[#fff] font-light text-[14px] md:text-[16px] mt-4">
-              I specialize in building fast, responsive user interfaces using
-              Angular, React, and modern UI frameworks. With strong proficiency
-              in HTML, CSS, JavaScript, and TypeScript, I craft seamless,
-              accessible web experiences. I work with libraries like Angular
-              Material, Bootstrap, and Tailwind CSS to develop elegant designs,
-              and leverage RxJS for powerful reactive programming. My focus is
-              always on performance, accessibility, and clean, maintainable
-              code. I thrive in collaborative environments and continuously stay
-              updated with the latest industry trends to deliver cutting-edge
-              solutions.
-            </p>
-            <div class="flex items-center mt-4">
-              <img class="h-[20px] pr-1" alt="skills" src="/portfolio/assets/front/html.png" />
-              <img class="h-[20px] pr-1" alt="skills" src="/portfolio/assets/front/css-3.png" />
-              <img class="h-[20px] pr-1" alt="skills" src="/portfolio/assets/front/js.png" />
-              <img class="h-[20px] pr-1" alt="skills" src="/portfolio/assets/front/physics.png" />
-              <img class="h-[20px] pr-1" alt="skills" src="/portfolio/assets/front/programing.png" />
-              <img class="h-[20px] pr-1" alt="skills" src="/portfolio/assets/front/typescript.png" />
-              <img class="h-[20px] pr-1" alt="skills" src="/portfolio/assets/front/boots.png" />
-
-              <img class="h-[20px] pr-1" alt="skills" src="/portfolio/assets/front/tailwind-css-svgrepo-com.png" />
-              <img class="h-[20px] pr-1" alt="skills" src="/portfolio/assets/front/bootstrap.png" />
-            </div>
-          </div>
-          <div appFadeInOnScroll from="right" class="text-[#fff] w-[350px] mb-2 md:w-[400px] card-bg">
-            <h1 class="text-[#e7e7e7] font-bold text-[22px]">
-              Back-end Development
-            </h1>
-            <p class="text-[14px] text-justify text-[#fff] font-light md:text-[16px] mt-4">
-              As a Full Stack Developer, I build robust and scalable backend
-              systems using Node.js and Express.js, seamlessly integrating with
-              databases like MySQL and MongoDB through Sequelize ORM. I write
-              clean, maintainable code that simplifies complex database
-              operations and accelerates development. I design well-structured
-              RESTful APIs that facilitate smooth communication between frontend
-              and backend, focusing on performance, security, and
-              maintainability. My backend solutions support scalable,
-              data-driven applications that deliver seamless user experiences
-              and solve real-world business challenges.
-            </p>
-
-            <div class="flex items-center mt-4">
-              @for (item of backendSkills; track $index) {
-              <img alt="skills" class="h-[20px] pr-1" [src]="'/portfolio/assets/backend/' + item + '.png'" />
-
-              }
-            </div>
-          </div>
-        </div>
-        <div #journeySection class="text-white text-center border-t-[1px] border-t-[#1e1e1e] mt-5">
-          <div appFadeInOnScroll from="bottom">
-            <h1 class="text-[25px] md:text-[40px] font-bold text-[#fff]">
-              In my prior experience
-            </h1>
-            <p class="text-[#fff] text-[14px] mt-3 md:text-[16px] font-light mt-2">
-              With 4 years of full-stack web development and design experience,
-              I've created <br />
-              seamless digital products, combining frontend creativity with
-              backend performance for well-known brands.
-            </p>
-          </div>
-
-        </div>
-
-        <div appFadeInOnScroll from="bottom" class="text-white text-center border-t-[1px] border-t-[#1e1e1e] mt-3">
-          <div class="flex justify-between items-center">
-            <div class="flex items-center mt-5">
-              <img class="mr-2 h-[60px] mr-4 rounded-[5px]" alt="download" src="assets/download.png" />
-              <div>
-                <h1 class="text-[#fff] font-bold text-[14px] md:text-[24px]">
-                  Software Development Engineer II
-                </h1>
-                <P class="text-[#fff] text-left font-medium text-[14px]">Flip Health Pvt Ltd.</P>
-              </div>
-            </div>
-            <div #dropdownTrigger>
-              <mat-icon *ngIf="!dropdownOpen" (click)="dropdownOpen = !dropdownOpen"
-                class="cursor-pointer">keyboard_arrow_down</mat-icon>
-              <mat-icon *ngIf="dropdownOpen" (click)="dropdownOpen = !dropdownOpen"
-                class="cursor-pointer">keyboard_arrow_up</mat-icon>
-            </div>
-          </div>
-
-          <div *ngIf="dropdownOpen" class="text-start">
-            <h1 class="text-[#fff] text-[18px] md:text-[22px] font-bold mt-4">
-              Roles & Responsibilities
-            </h1>
-            <ul
-              class="list-disc pl-5 space-y-2 animated-list text-[#fff] font-light text-[13px] md:text-[15px] text-justify mt-3">
-              <li>
-                <strong>Delivered full lifecycle contributions</strong> across
-                the Software Development Life Cycle (SDLC), from requirements
-                gathering to post-production support.
-              </li>
-              <li>
-                <strong>Developed SEO-friendly, mobile-responsive web
-                  applications</strong>
-                using Angular (v13+), Angular Material, SCSS, and React.js.
-              </li>
-              <li>
-                <strong>Boosted application performance</strong> through Angular
-                lazy loading, on-demand module loading, and code splitting.
-              </li>
-              <li>
-                <strong>Built RESTful APIs</strong> with Node.js, Express.js,
-                Sequelize ORM, and MySQL to support efficient microservices
-                communication.
-              </li>
-              <li>
-                <strong>Collaborated with Agile Scrum teams</strong>, mentored
-                junior developers, and consistently achieved over 95% sprint
-                goal completion.
-              </li>
-              <li>
-                <strong>Applied best practices in Git workflows</strong>,
-                including code reviews, pull requests, and structured branching
-                strategies to ensure high code quality and rapid delivery.
-              </li>
-              <li>
-                <strong>Gained hands-on experience with DevOps tools</strong>,
-                such as Terraform and AWS services (EC2, S3, Lambda),
-                contributing to deployment automation and cloud infrastructure
-                management.
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div appFadeInOnScroll from="bottom" class="text-white text-center border-t-[1px] border-t-[#1e1e1e] mt-3">
-          <div class="flex justify-between items-center">
-            <div class="flex items-center mt-5">
-              <img class="mr-2 h-[60px] mr-4 rounded-[6px]" alt="download" src="assets/download-1.png" />
-              <div>
-                <h1 class="text-[#fff] font-bold text-[13px] md:text-[24px]">
-                  Full Stack Developer - Apprenticeship
-                </h1>
-                <P class="text-[#fff] text-left font-medium text-[14px]">NxtWave </P>
-              </div>
-            </div>
-            <div>
-              <mat-icon *ngIf="!dropdownNxt" (click)="dropdownNxt = !dropdownNxt" class="cursor-pointer">
-                keyboard_arrow_down</mat-icon>
-              <mat-icon *ngIf="dropdownNxt" (click)="dropdownNxt = !dropdownNxt" class="cursor-pointer">
-                keyboard_arrow_up</mat-icon>
-            </div>
-          </div>
-          <div *ngIf="dropdownNxt" class="text-left">
-            <h1 class="text-[#fff] text-[18px] md:text-[22px] font-bold mt-4">
-              Experience gained through roles and responsibilities at NxtWave
-            </h1>
-            <ul
-              class="list-disc font-light pl-5 space-y-2 animated-list text-[#fff] text-[13px] md:text-[15px] text-justify mt-3">
-              <li>
-                <strong>Hands-on experience in building full-stack web
-                  applications</strong>
-                using MongoDB, Express.js, React.js, MySQL, Python, JavaScript,
-                and Node.js.
-              </li>
-              <li>
-                <strong>Developed multiple mini-projects</strong> focused on
-                CRUD operations and RESTful API design, gaining practical
-                insights into both frontend and backend development.
-              </li>
-              <li>
-                <strong>Implemented best practices in version control</strong>
-                using Git, enabling streamlined collaboration and efficient
-                project management.
-              </li>
-              <li>
-                <strong>Built and deployed full-stack applications</strong> such
-                as e-commerce platforms and task management tools, showcasing
-                seamless integration of frontend and backend technologies.
-              </li>
-              <li>
-                <strong>Demonstrated expertise in database integration</strong>
-                and developing dynamic user interfaces with a focus on
-                scalability and performance.
-              </li>
-            </ul>
-          </div>
-        </div>
-
-
-
-
-      </div>
-
-
+    <div class="hero-actions">
+      <button type="button" class="btn btn-primary" (click)="scrollTo('contact')">
+        Let's work together
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <a class="btn btn-ghost" [href]="profile.resume" download>
+        Download résumé
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
 
-    <div class="p-3 ">
-      <!-- appFadeInOnScroll [from]="i%2==0 ? 'left':'right'" -->
-
-      <h1 class="text-[25px] text-center md:text-[40px] font-bold text-[#fff]">Projects</h1>
-      <div class="relative mt-2 h-[58vh]  ">
-        <div class="project-slider" [class.next]="direction === 'next'" [class.prev]="direction === 'prev'">
-          <div *ngFor="let project of visibleProjects; let i = index"
-            class="border-t-[1px] mb-[10px] project-card relative overflow-scroll  h-[58vh] custm-bg rounded-[18px] p-[15px] border-t-[#1e1e1e]">
-
-            <div class="mt-2 select-none ">
-              <div class="flex items-center justify-between">
-                <h3 class="text-xl text-[#fff] font-semibold">{{ project.title }}</h3>
-                <div>
-                  <a class="text-gray-300 " href="https://movies-web-app-koy7.vercel.app" target="_blank"
-                    *ngIf="project.title == 'Movie Explorer'">Open in Browser</a>
-                </div>
-              </div>
-              <div class="mt-3 text-gray-300 text-sm md:text-base leading-relaxed pl-2 text-justify"
-                [innerHTML]="project?.description">
-              </div>
-              <div class="bg-[#252d37]  sticky bottom-[-16px] text-white rounded-sm pl-4 p-2 mt-2">
-                <small>Technologies Used : </small>
-                <small>{{project.tech_stack}} </small>
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-      </div>
-      <div class="flex justify-end mt-3 ">
-        <button
-          class="{{currentIndex === 0?'':'btn-grad-d'}}  uppercase rounded-[8px] text-center text-white cursor-pointer py-2 px-4 text-[10px] mr-1 w-[100px]"
-          (click)="previousProject()" [disabled]="currentIndex === 0" [class.opacity-50]="currentIndex === 0">
-          Previous
-        </button>
-
-        <button
-          class="{{currentIndex  == projects.length -1?'':'btn-grad-d'}}  uppercase rounded-[8px] text-center text-white cursor-pointer py-1 px-3 text-[10px] w-[100px]"
-          (click)="nextProject()" [disabled]="currentIndex  == projects.length -1"
-          [class.opacity-50]="currentIndex  == projects.length -1">
-          Next
-        </button>
-
-      </div>
-
-      <div appFadeInOnScroll from="bottom" class="flex justify-center relative text-center text-white mt-4">
-        <img width="100%" alt="avif" class="h-[550px]" src="assets/content-bg.avif" />
-        <div class="absolute top-[110px]">
-          <div class="flex justify-center pt-3 mt-3">
-            <img class="rounded-[50%] h-[138px] w-[138px]" style="object-fit: cover" alt="profile"
-              src="/portfolio/assets/profile-pic.jpg" />
-          </div>
-          <h1 class="text-[26px] text-[#fff] font-bold">Mahendra Gadi</h1>
-          <p class="text-[#fff] font-light text-[16px]">Full Stack Developer</p>
-
-          <div #contactInfo class="flex flex-col md:flex-row items-center mt-6">
-            <div
-              class="w-[400px] md:border-r-[1px] md:border-r-[#1e1e1e] md:border-b-[0px] border-b-[1px] p-2 border-b-[#1e1e1e]">
-              <h1 class="text-[14px] md:text-[16px] text-[#fff] font-medium">
-                E-mail me at:
-              </h1>
-              <p class="text-[16px] md:text-[18px] text-[#fff] font-light">
-                mahendragadi66&#64;gmail.com
-              </p>
-            </div>
-            <div class="w-[200px] border-b-[1px] p-2 md:border-b-[0px] border-b-[#1e1e1e]">
-              <h1 class="text-[14px] md:text-[16px] text-[#fff] font-medium">
-                Follow me on:
-              </h1>
-              <div class="flex justify-center items-center pl-[15px] p-2">
-                <a href="https://github.com/gadimahendra" target="_blank">
-                  <img alt="git" class="h-[31px] pr-2" src="assets/git.png" />
-                </a>
-                <a href="https://www.linkedin.com/in/mahendra-gadi/" target="_blank">
-                  <img alt="linkdeIn" class="h-[31px]" src="assets/linkedin.png" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="hero-meta">
+      <span>
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        {{ profile.location }}
+      </span>
+      <span class="dot-sep"></span>
+      <span>Angular · React · TypeScript</span>
     </div>
   </div>
+
+  <div class="hero-portrait" appFadeInOnScroll from="right">
+    <div class="portrait-frame">
+      <img [src]="profile.photo" [alt]="'Portrait of ' + profile.name" width="1280" height="990" />
+    </div>
+    <div class="portrait-card">
+      <span class="label">Currently</span>
+      <strong>Frontend Developer</strong>
+      <span class="muted">&#64; Tech Navitas</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="container">
+  <div class="stats" appFadeInOnScroll from="bottom">
+    @for (s of stats; track s.label; let i = $index) {
+      <div class="stat">
+        <span class="stat-value" [appCountUp]="s.to" [suffix]="s.suffix" [delay]="i * 120">{{ s.to }}{{ s.suffix }}</span>
+        <span class="stat-label">{{ s.label }}</span>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    @for (k of [0, 1]; track k) {
+      @for (m of marquee; track m.name) {
+        <span class="marquee-item">
+          <img [src]="'assets/skills/' + m.img + '.png'" alt="" loading="lazy" />
+          {{ m.name }}
+        </span>
+      }
+    }
+  </div>
+</div>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills" class="section container">
+  <header class="section-head" appFadeInOnScroll from="bottom">
+    <span class="kicker">01 — Expertise</span>
+    <h2 class="section-title">A toolkit built for <em>shipping</em>.</h2>
+    <p class="section-sub">
+      Deep in the frontend, comfortable across the stack — with a strong focus on performance,
+      server-side rendering and clean, maintainable code.
+    </p>
+  </header>
+
+  <div class="card proficiency" appInView>
+    <div class="proficiency-head">
+      <span class="label">Proficiency</span>
+      <span class="label">Self-assessed</span>
+    </div>
+    <div class="bars">
+      @for (s of skillLevels; track s.name; let i = $index) {
+        <div class="bar">
+          <div class="bar-meta">
+            <span class="bar-name">{{ s.name }}</span>
+            <span class="bar-value" [appCountUp]="s.level" suffix="%" [duration]="1600" [delay]="i * 110">{{ s.level }}%</span>
+          </div>
+          <div class="bar-track" role="progressbar" [attr.aria-label]="s.name" [attr.aria-valuenow]="s.level" aria-valuemin="0" aria-valuemax="100">
+            <span class="bar-fill" [style.width.%]="s.level" [style.transition-delay.ms]="i * 110"></span>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="skill-grid">
+    @for (g of skillGroups; track g.title; let i = $index) {
+      <article class="card skill-card" appFadeInOnScroll from="bottom">
+        <span class="card-index">0{{ i + 1 }}</span>
+        <h3>{{ g.title }}</h3>
+        <div class="chips">
+          @for (s of g.items; track s) {
+            <span class="chip">{{ s }}</span>
+          }
+        </div>
+      </article>
+    }
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience" class="section container">
+  <header class="section-head" appFadeInOnScroll from="bottom">
+    <span class="kicker">02 — Experience</span>
+    <h2 class="section-title">Where I've made an <em>impact</em>.</h2>
+  </header>
+
+  <ol class="timeline">
+    @for (e of experience; track e.company; let i = $index) {
+      <li class="timeline-item" [class.open]="openExp() === i" appFadeInOnScroll from="bottom">
+        <span class="timeline-dot" [class.live]="e.current"></span>
+        <div class="card exp-card">
+          <button type="button" class="exp-head" (click)="toggleExp(i)" [attr.aria-expanded]="openExp() === i">
+            <div class="exp-logo">
+              @if (e.logo) {
+                <img [src]="e.logo" [alt]="e.company + ' logo'" />
+              } @else {
+                <span>{{ e.initials }}</span>
+              }
+            </div>
+            <div class="exp-title">
+              <h3>{{ e.role }}</h3>
+              <p>
+                <strong>{{ e.company }}</strong> · {{ e.location }}
+              </p>
+            </div>
+            <div class="exp-period">
+              @if (e.current) {
+                <span class="badge">Current</span>
+              }
+              <span>{{ e.period }}</span>
+            </div>
+            <svg class="chev" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+
+          <div class="exp-body">
+            <div class="exp-inner">
+              <p class="exp-blurb">{{ e.blurb }}</p>
+              <ul class="ticks">
+                @for (h of e.highlights; track h) {
+                  <li>{{ h }}</li>
+                }
+              </ul>
+              <div class="chips">
+                @for (t of e.tags; track t) {
+                  <span class="chip chip-sm">{{ t }}</span>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    }
+  </ol>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects" class="section container">
+  <header class="section-head" appFadeInOnScroll from="bottom">
+    <span class="kicker">03 — Selected work</span>
+    <h2 class="section-title">Projects I'm <em>proud</em> of.</h2>
+  </header>
+
+  <div class="filters" role="tablist" appFadeInOnScroll from="bottom">
+    @for (f of filters; track f) {
+      <button type="button" role="tab" class="filter" [class.active]="activeFilter() === f"
+        [attr.aria-selected]="activeFilter() === f" (click)="activeFilter.set(f)">
+        {{ f === 'Personal project' ? 'Personal' : f }}
+      </button>
+    }
+  </div>
+
+  <div class="project-grid">
+    @for (p of projects(); track p.title; let i = $index) {
+      <article class="card project-card" tabindex="0" (click)="openProject(p)" (keydown.enter)="openProject(p)">
+        <div class="project-top">
+          <span class="project-num">{{ (i + 1).toString().padStart(2, '0') }}</span>
+          <span class="project-cat">{{ p.category }}</span>
+        </div>
+        <h3>{{ p.title }}</h3>
+        <p class="project-company">{{ p.company }}</p>
+        <p class="project-summary">{{ p.summary }}</p>
+        <div class="chips">
+          @for (t of p.tech.slice(0, 4); track t) {
+            <span class="chip chip-sm">{{ t }}</span>
+          }
+          @if (p.tech.length > 4) {
+            <span class="chip chip-sm chip-more">+{{ p.tech.length - 4 }}</span>
+          }
+        </div>
+        <span class="project-cta">
+          View details
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </article>
+    }
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section id="education" class="section container">
+  <header class="section-head" appFadeInOnScroll from="bottom">
+    <span class="kicker">04 — Background</span>
+    <h2 class="section-title">Education &amp; <em>credentials</em>.</h2>
+  </header>
+
+  <div class="edu-grid">
+    <article class="card" appFadeInOnScroll from="bottom">
+      <span class="label">Education</span>
+      <h3>Bachelor's Degree</h3>
+      <p class="muted">Osmania University · 2013 — 2016</p>
+    </article>
+    <article class="card" appFadeInOnScroll from="bottom">
+      <span class="label">Certifications · NxtWave</span>
+      <ul class="ticks compact">
+        @for (c of certificates; track c) {
+          <li>{{ c }}</li>
+        }
+      </ul>
+    </article>
+    <article class="card" appFadeInOnScroll from="bottom">
+      <span class="label">Languages</span>
+      <ul class="lang-list">
+        @for (l of languages; track l.name) {
+          <li><span>{{ l.name }}</span><span class="muted">{{ l.level }}</span></li>
+        }
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="section container">
+  <div class="contact card" appFadeInOnScroll from="bottom">
+    <span class="kicker">05 — Contact</span>
+    <h2 class="contact-title">Have a project in mind?<br /><em>Let's build it together.</em></h2>
+    <p class="section-sub">
+      I'm open to frontend and full-stack roles and freelance collaborations. The fastest way to reach me is email.
+    </p>
+    <a class="contact-email" [href]="'mailto:' + profile.email">{{ profile.email }}</a>
+    <div class="socials">
+      <a class="btn btn-ghost" [href]="profile.linkedin" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4V21H3V9.75Zm6.5 0h3.83v1.54h.05c.53-1 1.84-2.05 3.79-2.05 4.05 0 4.8 2.66 4.8 6.13V21h-4v-4.9c0-1.17-.02-2.68-1.63-2.68-1.64 0-1.89 1.28-1.89 2.6V21h-4V9.75Z"/></svg>
+        LinkedIn
+      </a>
+      <a class="btn btn-ghost" [href]="profile.github" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+        GitHub
+      </a>
+      <a class="btn btn-ghost" [href]="profile.resume" download>Résumé (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer container">
+  <span>© {{ year }} {{ profile.name }}</span>
+  <span class="muted">Designed &amp; built with Angular</span>
+</footer>
+
+<!-- ============ PROJECT MODAL ============ -->
+@if (selected(); as p) {
+  <div class="modal-backdrop" (click)="closeProject()"></div>
+  <div class="modal" role="dialog" aria-modal="true" [attr.aria-label]="p.title">
+    <button type="button" class="modal-close" (click)="closeProject()" aria-label="Close">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <span class="project-cat">{{ p.category }} · {{ p.company }}</span>
+    <h3 class="modal-title">{{ p.title }}</h3>
+    <p class="lead small">{{ p.summary }}</p>
+
+    <h4>Key features</h4>
+    <ul class="ticks">
+      @for (f of p.features; track f) {
+        <li>{{ f }}</li>
+      }
+    </ul>
+
+    @if (p.challenges?.length) {
+      <h4>Challenges &amp; solutions</h4>
+      <ul class="ticks">
+        @for (c of p.challenges; track c) {
+          <li>{{ c }}</li>
+        }
+      </ul>
+    }
+
+    <h4>Tech stack</h4>
+    <div class="chips">
+      @for (t of p.tech; track t) {
+        <span class="chip">{{ t }}</span>
+      }
+    </div>
+
+    @if (p.link) {
+      <a class="btn btn-primary mt" [href]="p.link" target="_blank" rel="noopener">Open live site ↗</a>
+    }
+  </div>
+}
