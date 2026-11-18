@@ -76,6 +76,7 @@ export class MainComponent implements OnInit {
 
 
   ngOnInit(): void {
+    
     this._shared.cuurrentVal.subscribe((res: any) => {
       if (res == 'Exp') {
         this.journeySection?.nativeElement.scrollIntoView({ behavior: 'smooth' });

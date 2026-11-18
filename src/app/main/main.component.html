@@ -7,7 +7,7 @@
       </h1>
 
       <h1 class="text-[#fff] text-[14px] font-light md:text-[16px] text-justify mt-3">
-        I am a Full Stack Developer with 4+ years of experience delivering
+        With 4+ years of experience delivering
         scalable and secure web applications. I am skilled in both frontend and
         backend technologies and create seamless user experiences while solving
         complex business challenges. I am dedicated to driving projects forward
@@ -32,11 +32,11 @@
         <div class="maeque-text fade-out-horizontal">
           <div class="maeque-text-track">
             <p *ngFor="let skill of skillSet" class="bg-white flex items-center font-bold">
-              <img class="h-[20px] pr-2" [alt]="skill.name" [src]="'../../assets/skills/' + skill.img + '.png'" />
+              <img class="h-[20px] pr-2" [alt]="skill.name" [src]="'/portfolio/assets/skills/' + skill.img + '.png'" />
               {{ skill.name }}
             </p>
             <p aria-hidden="true" class="bg-white flex items-center font-bold" *ngFor="let skill of skillSet">
-              <img class="h-[20px] pr-2" [alt]="skill.name" [src]="'../../assets/skills/' + skill.img + '.png'" />
+              <img class="h-[20px] pr-2" [alt]="skill.name" [src]="'/portfolio/assets/skills/' + skill.img + '.png'" />
               {{ skill.name }}
             </p>
           </div>
@@ -45,10 +45,10 @@
 
       <div class="relative">
         <div appFadeInOnScroll from="bottom" class="flex justify-center pt-3 mt-3">
-          <img class="h-[200px] w-[200px] object-cover rounded-[50%]" src="assets/profile-pic.jpg" />
+          <img class="h-[200px] w-[200px] object-cover rounded-[50%]" alt="profile" src="assets/profile-pic.jpg" />
         </div>
         <div class="hidden md:block absolute top-[52px] md:right-[137px] lg:right-[250px]">
-          <img class="h-[57px]" src="https://framerusercontent.com/images/8ByXL86dgyYbcyOwzHpi642Dk.svg" />
+          <img class="h-[57px]" alt="s-line" src="https://framerusercontent.com/images/8ByXL86dgyYbcyOwzHpi642Dk.svg" />
         </div>
         <h1
           class="hidden md:block absolute md:right-[40px] lg:right-[140px] font-medium top-[40px] text-[#cde4fe] text-[18px]">
@@ -90,16 +90,16 @@
               solutions.
             </p>
             <div class="flex items-center mt-4">
-              <img class="h-[20px] pr-1" alt="skills" src="../../assets/front/html.png" />
-              <img class="h-[20px] pr-1" alt="skills" src="../../assets/front/css-3.png" />
-              <img class="h-[20px] pr-1" alt="skills" src="../../assets/front/js.png" />
-              <img class="h-[20px] pr-1" alt="skills" src="../../assets/front/physics.png" />
-              <img class="h-[20px] pr-1" alt="skills" src="../../assets/front/programing.png" />
-              <img class="h-[20px] pr-1" alt="skills" src="../../assets/front/typescript.png" />
-              <img class="h-[20px] pr-1" alt="skills" src="../../assets/front/boots.png" />
+              <img class="h-[20px] pr-1" alt="skills" src="/portfolio/assets/front/html.png" />
+              <img class="h-[20px] pr-1" alt="skills" src="/portfolio/assets/front/css-3.png" />
+              <img class="h-[20px] pr-1" alt="skills" src="/portfolio/assets/front/js.png" />
+              <img class="h-[20px] pr-1" alt="skills" src="/portfolio/assets/front/physics.png" />
+              <img class="h-[20px] pr-1" alt="skills" src="/portfolio/assets/front/programing.png" />
+              <img class="h-[20px] pr-1" alt="skills" src="/portfolio/assets/front/typescript.png" />
+              <img class="h-[20px] pr-1" alt="skills" src="/portfolio/assets/front/boots.png" />
 
-              <img class="h-[20px] pr-1" alt="skills" src="../../assets/front/tailwind-css-svgrepo-com.png" />
-              <img class="h-[20px] pr-1" alt="skills" src="../../assets/front/bootstrap.png" />
+              <img class="h-[20px] pr-1" alt="skills" src="/portfolio/assets/front/tailwind-css-svgrepo-com.png" />
+              <img class="h-[20px] pr-1" alt="skills" src="/portfolio/assets/front/bootstrap.png" />
             </div>
           </div>
           <div appFadeInOnScroll from="right" class="text-[#fff] w-[350px] mb-2 md:w-[400px] card-bg">
@@ -121,7 +121,7 @@
 
             <div class="flex items-center mt-4">
               @for (item of backendSkills; track $index) {
-              <img alt="skills" class="h-[20px] pr-1" [src]="'../../assets/backend/' + item + '.png'" />
+              <img alt="skills" class="h-[20px] pr-1" [src]="'/portfolio/assets/backend/' + item + '.png'" />
 
               }
             </div>
@@ -145,7 +145,7 @@
         <div appFadeInOnScroll from="bottom" class="text-white text-center border-t-[1px] border-t-[#1e1e1e] mt-3">
           <div class="flex justify-between items-center">
             <div class="flex items-center mt-5">
-              <img class="mr-2 h-[60px] mr-4 rounded-[5px]" src="assets/download.png" />
+              <img class="mr-2 h-[60px] mr-4 rounded-[5px]" alt="download" src="assets/download.png" />
               <div>
                 <h1 class="text-[#fff] font-bold text-[14px] md:text-[24px]">
                   Software Development Engineer II
@@ -208,7 +208,7 @@
         <div appFadeInOnScroll from="bottom" class="text-white text-center border-t-[1px] border-t-[#1e1e1e] mt-3">
           <div class="flex justify-between items-center">
             <div class="flex items-center mt-5">
-              <img class="mr-2 h-[60px] mr-4 rounded-[6px]" src="assets/download-1.png" />
+              <img class="mr-2 h-[60px] mr-4 rounded-[6px]" alt="download" src="assets/download-1.png" />
               <div>
                 <h1 class="text-[#fff] font-bold text-[13px] md:text-[24px]">
                   Full Stack Developer - Apprenticeship
@@ -280,8 +280,8 @@
               <div class="flex items-center justify-between">
                 <h3 class="text-xl text-[#fff] font-semibold">{{ project.title }}</h3>
                 <div>
-                  <a class="text-gray-300 " href="https://movies-web-app-git-main-gadimahendras-projects.vercel.app/"
-                    target="_blank" *ngIf="project.title == 'Movie Explorer'">Open in Browser</a>
+                  <a class="text-gray-300 " href="https://movies-web-app-koy7.vercel.app" target="_blank"
+                    *ngIf="project.title == 'Movie Explorer'">Open in Browser</a>
                 </div>
               </div>
               <div class="mt-3 text-gray-300 text-sm md:text-base leading-relaxed pl-2 text-justify"
@@ -315,10 +315,11 @@
       </div>
 
       <div appFadeInOnScroll from="bottom" class="flex justify-center relative text-center text-white mt-4">
-        <img width="100%" class="h-[550px]" src="assets/content-bg.avif" />
+        <img width="100%" alt="avif" class="h-[550px]" src="assets/content-bg.avif" />
         <div class="absolute top-[110px]">
           <div class="flex justify-center pt-3 mt-3">
-            <img class="rounded-[50%] h-[138px] w-[138px]" style="object-fit: cover" src="assets/profile-pic.jpg" />
+            <img class="rounded-[50%] h-[138px] w-[138px]" style="object-fit: cover" alt="profile"
+              src="/portfolio/assets/profile-pic.jpg" />
           </div>
           <h1 class="text-[26px] text-[#fff] font-bold">Mahendra Gadi</h1>
           <p class="text-[#fff] font-light text-[16px]">Full Stack Developer</p>
@@ -339,10 +340,10 @@
               </h1>
               <div class="flex justify-center items-center pl-[15px] p-2">
                 <a href="https://github.com/gadimahendra" target="_blank">
-                  <img class="h-[31px] pr-2" src="assets/git.png" />
+                  <img alt="git" class="h-[31px] pr-2" src="assets/git.png" />
                 </a>
                 <a href="https://www.linkedin.com/in/mahendra-gadi/" target="_blank">
-                  <img class="h-[31px]" src="assets/linkedin.png" />
+                  <img alt="linkdeIn" class="h-[31px]" src="assets/linkedin.png" />
                 </a>
               </div>
             </div>

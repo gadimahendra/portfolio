@@ -3,18 +3,38 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SharedService {
+  behaviourSubject: any = new BehaviorSubject<any>('');
 
-  behaviourSubject: any = new BehaviorSubject<any>('')
+  cuurrentVal = this.behaviourSubject.asObservable();
 
-  cuurrentVal = this.behaviourSubject.asObservable()
-
-  projects: any[] = []
+  projects: any[] = [];
 
   constructor(private sanitizer: DomSanitizer) {
     this.projects = [
+      {
+        title: 'Movie Explorer',
+        description: this.sanitizer.bypassSecurityTrustHtml(`
+    <p>A responsive web application that allows users to explore and filter movies using the TMDB API. Users can search for movies, view trending titles based on search activity, and enjoy a seamless browsing experience across both desktop and mobile devices. The platform is designed to be fast, intuitive, and fully responsive.</p>
+    
+    <h3 class="text-xl text-[#fff] font-semibold mt-3 underline">Key Features</h3>
+    <ul class="list-disc font-light pl-5 space-y-2 animated-list text-[#fff] md:text-[15px] text-[13px] text-justify mt-3">
+      <li>Movie Browsing – Search and filter movies by name for easy discovery.</li>
+      <li>Trending Movies – Displays trending movies based on user search activity.</li>
+      <li>Search Tracking – User searches are tracked and stored using Appwrite.</li>
+      <li>Error Handling – Robust handling for API requests ensures smooth operation.</li>
+      <li>Responsive UI – Fully optimized for both desktop and mobile devices.</li>
+      <li>Fast Performance – Built with React 19 and Vite 7 for a quick, smooth experience.</li>
+      <li>Optimized Rendering – Efficient data fetching and rendering for better user experience.</li>
+    </ul>
+    
+   
+  `),
+        tech_stack:
+          'React 19, Vite 7, CSS/SCSS, Tailwind CSS, TMDB API, Appwrite',
+      },
       {
         title: 'Admin Web Application',
         description: this.sanitizer.bypassSecurityTrustHtml(`
@@ -45,7 +65,8 @@ export class SharedService {
 
           </div>
         `),
-        tech_stack: 'Angular 13, TypeScript, RxJS, Bootstrap, Angular Material, ApexCharts, Jasmine, Karma, REST APIs, Firebase'
+        tech_stack:
+          'Angular 13, TypeScript, RxJS, Bootstrap, Angular Material, ApexCharts, Jasmine, Karma, REST APIs, Firebase',
       },
       {
         title: 'Client Admin Panel ',
@@ -68,7 +89,8 @@ export class SharedService {
          
         `),
 
-        tech_stack: 'Angular 14, TypeScript, RxJS, Tailwind CSS, Angular Material, ApexCharts, Jasmine, Karma, REST APIs, Firebase'
+        tech_stack:
+          'Angular 14, TypeScript, RxJS, Tailwind CSS, Angular Material, ApexCharts, Jasmine, Karma, REST APIs, Firebase',
       },
       {
         title: 'Enrollment Flow ',
@@ -87,7 +109,8 @@ export class SharedService {
           
           `),
         open: false,
-        tech_stack: 'Angular 17, TypeScript, RxJS, Tailwind CSS, Angular Material, Apex Charts, Jasmine, Karma, REST APIs, Razorpay, Firebase'
+        tech_stack:
+          'Angular 17, TypeScript, RxJS, Tailwind CSS, Angular Material, Apex Charts, Jasmine, Karma, REST APIs, Razorpay, Firebase',
       },
       //       {
       //         title: 'Flip Health Website',
@@ -96,7 +119,7 @@ export class SharedService {
       //             <li> I developed the Flip Health company website using Angular version 13 and Tailwind CSS, focusing on building a modern, responsive, and visually appealing interface. The site features clean navigation, fast load times, and a mobile-friendly design to ensure a seamless user experience across devices. Leveraging Angular’s powerful component architecture and Tailwind’s utility-first styling, I was able to create a scalable and maintainable codebase that effectively showcases Flip Health’s AI-driven healthcare services.</li>
       //           </ul>
       //            <div class="bg-[#0e141b] rounded-sm pl-4 p-2 mt-2">
-      //            <small>Technologies Used : </small> 
+      //            <small>Technologies Used : </small>
       // <small>Angular 13, TypeScript, RxJS, Bootstrap, Angular Material, REST APIs</small>
 
       //           </div>
@@ -119,43 +142,18 @@ export class SharedService {
         
         `,
 
-        tech_stack: 'React, TypeScript, Redux, Tailwind CSS, REST APIs, Hugging face'
+        tech_stack:
+          'React, TypeScript, Redux, Tailwind CSS, REST APIs, Hugging face',
       },
-      {
-        title: 'Movie Explorer',
-        description: this.sanitizer.bypassSecurityTrustHtml(`
-    <p>A responsive web application that allows users to explore and filter movies using the TMDB API. Users can search for movies, view trending titles based on search activity, and enjoy a seamless browsing experience across both desktop and mobile devices. The platform is designed to be fast, intuitive, and fully responsive.</p>
-    
-    <h3 class="text-xl text-[#fff] font-semibold mt-3 underline">Key Features</h3>
-    <ul class="list-disc font-light pl-5 space-y-2 animated-list text-[#fff] md:text-[15px] text-[13px] text-justify mt-3">
-      <li>Movie Browsing – Search and filter movies by name for easy discovery.</li>
-      <li>Trending Movies – Displays trending movies based on user search activity.</li>
-      <li>Search Tracking – User searches are tracked and stored using Appwrite.</li>
-      <li>Error Handling – Robust handling for API requests ensures smooth operation.</li>
-      <li>Responsive UI – Fully optimized for both desktop and mobile devices.</li>
-      <li>Fast Performance – Built with React 19 and Vite 7 for a quick, smooth experience.</li>
-      <li>Optimized Rendering – Efficient data fetching and rendering for better user experience.</li>
-    </ul>
-    
-   
-  `),
-        tech_stack: 'React 19, Vite 7, CSS/SCSS, Tailwind CSS, TMDB API, Appwrite'
-      }
-    ]
+    ];
   }
-
-
-
-
-
 
   scrollToValue(val: any) {
     console.log('consol sub', val);
-    this.behaviourSubject.next(val)
+    this.behaviourSubject.next(val);
   }
 
   getProjects() {
-    return this.projects
+    return this.projects;
   }
-
 }
