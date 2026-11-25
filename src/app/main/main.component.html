@@ -1,131 +1,222 @@
-<!-- ============ HERO ============ -->
+<!-- ================= HERO ================= -->
 <section id="home" class="hero container">
-  <div class="hero-copy" appFadeInOnScroll from="left">
-    <span class="eyebrow"><span class="pulse"></span> Available for new opportunities</span>
-    <h1 class="display">
-      <span class="line"><span>Crafting <em>elegant</em>,</span></span>
-      <span class="line"><span>high-performance</span></span>
-      <span class="line"><span>web experiences.</span></span>
+  <div class="hero-copy">
+    <span class="eyebrow mono"><span class="pulse"></span> Open to frontend &amp; full-stack roles</span>
+
+    <h1 class="hero-title" aria-label="Frontend Developer">
+      <span class="line"><span class="ht-accent">Frontend</span></span>
+      <span class="line ht-indent"><span class="ht-muted">Developer</span></span>
     </h1>
-    <p class="lead">{{ profile.summary }}</p>
+
+    <p class="hero-intro">
+      Hi, I'm <strong>{{ profile.name }}</strong>. For over four years I've been building
+      <strong>web apps in Angular and React</strong>, mostly in <strong>healthcare</strong>:
+      patient apps, support tools and benefits platforms used by <strong>50,000+ people</strong>.
+    </p>
 
     <div class="hero-actions">
-      <button type="button" class="btn btn-primary" (click)="scrollTo('contact')">
-        Let's work together
-        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <a class="btn btn-ghost" [href]="profile.resume" download>
-        Download résumé
-        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-
-    <div class="hero-meta">
-      <span>
-        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
-        {{ profile.location }}
-      </span>
-      <span class="dot-sep"></span>
-      <span>Angular · React · TypeScript</span>
+      <button type="button" class="btn btn-primary mono" (click)="scrollTo('contact')">Let's talk →</button>
+      <button type="button" class="btn btn-ghost mono" (click)="scrollTo('projects')">See my work</button>
     </div>
   </div>
 
-  <div class="hero-portrait" appFadeInOnScroll from="right">
-    <div class="portrait-frame">
-      <img [src]="profile.photo" [alt]="'Portrait of ' + profile.name" width="1280" height="990" />
+  <div class="hero-photo">
+    <div class="orbit" aria-hidden="true"><span></span></div>
+    <div class="photo-ring">
+      <img [src]="profile.photo" [alt]="'Photo of ' + profile.name" width="1280" height="990" />
     </div>
-    <div class="portrait-card">
-      <span class="label">Currently</span>
-      <strong>Frontend Developer</strong>
-      <span class="muted">&#64; Tech Navitas</span>
+    <div class="photo-tag mono">
+      <span class="pulse"></span> Now at Tech Navitas
     </div>
   </div>
 </section>
 
-<!-- ============ STATS ============ -->
-<section class="container">
-  <div class="stats" appFadeInOnScroll from="bottom">
-    @for (s of stats; track s.label; let i = $index) {
-      <div class="stat">
-        <span class="stat-value" [appCountUp]="s.to" [suffix]="s.suffix" [delay]="i * 120">{{ s.to }}{{ s.suffix }}</span>
-        <span class="stat-label">{{ s.label }}</span>
-      </div>
-    }
-  </div>
-</section>
-
-<!-- ============ MARQUEE ============ -->
+<!-- ================= WORD MARQUEE ================= -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
     @for (k of [0, 1]; track k) {
-      @for (m of marquee; track m.name) {
-        <span class="marquee-item">
-          <img [src]="'assets/skills/' + m.img + '.png'" alt="" loading="lazy" />
-          {{ m.name }}
-        </span>
+      @for (w of marquee; track w; let i = $index) {
+        <span class="mq-word" [class.outline]="i % 2 === 0">{{ w }}</span>
+        <span class="mq-dot"></span>
       }
     }
   </div>
 </div>
 
-<!-- ============ SKILLS ============ -->
-<section id="skills" class="section container">
-  <header class="section-head" appFadeInOnScroll from="bottom">
-    <span class="kicker">01 — Expertise</span>
-    <h2 class="section-title">A toolkit built for <em>shipping</em>.</h2>
-    <p class="section-sub">
-      Deep in the frontend, comfortable across the stack — with a strong focus on performance,
-      server-side rendering and clean, maintainable code.
-    </p>
-  </header>
+<!-- ================= STATS ================= -->
+<section class="container stats">
+  @for (s of stats; track s.label; let i = $index) {
+    <div class="stat" appFadeInOnScroll from="bottom">
+      <span class="stat-num">
+        <span [appCountUp]="s.to" [delay]="i * 120">{{ s.to }}</span><sup>{{ s.suffix }}</sup>
+      </span>
+      <span class="stat-label">{{ s.label }}</span>
+    </div>
+  }
+</section>
 
-  <div class="card proficiency" appInView>
-    <div class="proficiency-head">
-      <span class="label">Proficiency</span>
-      <span class="label">Self-assessed</span>
-    </div>
-    <div class="bars">
-      @for (s of skillLevels; track s.name; let i = $index) {
-        <div class="bar">
-          <div class="bar-meta">
-            <span class="bar-name">{{ s.name }}</span>
-            <span class="bar-value" [appCountUp]="s.level" suffix="%" [duration]="1600" [delay]="i * 110">{{ s.level }}%</span>
-          </div>
-          <div class="bar-track" role="progressbar" [attr.aria-label]="s.name" [attr.aria-valuenow]="s.level" aria-valuemin="0" aria-valuemax="100">
-            <span class="bar-fill" [style.width.%]="s.level" [style.transition-delay.ms]="i * 110"></span>
-          </div>
-        </div>
-      }
-    </div>
+<!-- ================= STATEMENT ================= -->
+<section class="container statement-wrap">
+  <p class="statement" appFadeInOnScroll from="bottom">
+    I build screens that feel simple to use, and I keep them
+    <span class="accent">fast and reliable</span> as the product around them keeps growing.
+  </p>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="section container about">
+  <div class="about-copy" appFadeInOnScroll from="left">
+    <span class="tag mono"><span class="star">✳</span> About me</span>
+    <h2 class="about-title">Hi, I'm Mahendra.</h2>
+    <p>
+      I'm a <strong>frontend developer in Hyderabad</strong> with a little over four years of experience.
+      Most of it has gone into healthcare products: apps for patients, tools for support teams, and
+      dashboards for the companies that buy the plans.
+    </p>
+    <p>
+      Right now I'm at <strong>Tech Navitas</strong>, working on <strong>HEBA</strong>, a benefits
+      administration platform for a US client. Before that I spent three years at <strong>Flip Health</strong>,
+      where I led frontend work on apps used by more than 50,000 people.
+    </p>
+    <p>
+      I like work you can measure. At Flip Health I took <strong>30% off the first load</strong>, and our test
+      suites brought <strong>regression bugs down by 40%</strong>. I also mentored three junior developers, which
+      taught me as much as it taught them.
+    </p>
+    <p>
+      I mostly write <strong>Angular and React with TypeScript</strong>, and I'm comfortable writing the
+      <strong>Node.js and Express</strong> API behind a feature, so I can see it through from the screen to the database.
+    </p>
+    <p class="about-cta">
+      If that sounds like what your team needs, <a (click)="scrollTo('contact')" class="text-link">let's talk</a>.
+    </p>
   </div>
 
-  <div class="skill-grid">
-    @for (g of skillGroups; track g.title; let i = $index) {
-      <article class="card skill-card" appFadeInOnScroll from="bottom">
-        <span class="card-index">0{{ i + 1 }}</span>
-        <h3>{{ g.title }}</h3>
-        <div class="chips">
-          @for (s of g.items; track s) {
-            <span class="chip">{{ s }}</span>
+  <aside class="facts" appFadeInOnScroll from="right">
+    <div class="facts-head mono">
+      <span class="dots"><i></i><i></i><i></i></span>
+      mahendra.json
+    </div>
+    <dl>
+      <div><dt class="mono">based_in</dt><dd>{{ profile.location }}</dd></div>
+      <div><dt class="mono">role</dt><dd>Frontend Developer, Tech Navitas</dd></div>
+      <div><dt class="mono">experience</dt><dd>4+ years</dd></div>
+      <div><dt class="mono">focus</dt><dd>Angular · React · TypeScript</dd></div>
+      <div><dt class="mono">education</dt><dd>Bachelor's, Osmania University (2016)</dd></div>
+      <div>
+        <dt class="mono">languages</dt>
+        <dd>
+          @for (l of languages; track l.name; let last = $last) {
+            {{ l.name }}<span class="muted"> ({{ l.level }})</span>{{ last ? '' : ', ' }}
           }
-        </div>
+        </dd>
+      </div>
+      <div>
+        <dt class="mono">certificates</dt>
+        <dd>NxtWave: {{ certificates.join(', ') }}</dd>
+      </div>
+      <div><dt class="mono">status</dt><dd class="ok"><span class="pulse"></span> Open to new roles</dd></div>
+    </dl>
+  </aside>
+</section>
+
+<!-- ================= WHAT SETS ME APART ================= -->
+<section class="section container">
+  <span class="tag mono" appFadeInOnScroll from="bottom"><span class="star">✳</span> What sets me apart</span>
+  <p class="lede" appFadeInOnScroll from="bottom">
+    Lots of developers can build the screen. What I bring is <span class="accent">the work around it</span>:
+    keeping it fast, testing it before it ships, and building pieces the next team can reuse.
+  </p>
+
+  <div class="strengths">
+    @for (s of strengths; track s.title) {
+      <article class="strength" appFadeInOnScroll from="bottom">
+        <span class="s-icon" aria-hidden="true">
+          @switch (s.icon) {
+            @case ('speed') {
+              <svg viewBox="0 0 24 24"><path d="M12 14l4-4M4.9 19a9 9 0 1 1 14.2 0" /><circle cx="12" cy="14" r="1.5" /></svg>
+            }
+            @case ('shield') {
+              <svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6l8-3Z" /><path d="m8.5 12 2.5 2.5 4.5-5" /></svg>
+            }
+            @case ('blocks') {
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="1.5" /><rect x="13" y="3" width="8" height="8" rx="1.5" /><rect x="3" y="13" width="8" height="8" rx="1.5" /><rect x="13" y="13" width="8" height="8" rx="1.5" /></svg>
+            }
+            @default {
+              <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="7" ry="2.5" /><path d="M5 5.5v6c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-6M5 11.5v6c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-6" /></svg>
+            }
+          }
+        </span>
+        <h3 class="display-sm">{{ s.title }}</h3>
+        <p>{{ s.text }}</p>
       </article>
     }
   </div>
 </section>
 
-<!-- ============ EXPERIENCE ============ -->
+<!-- ================= SKILLS + GAUGE ================= -->
+<section id="skills" class="section container">
+  <span class="tag mono" appFadeInOnScroll from="bottom"><span class="star">✳</span> Skills</span>
+
+  <div class="skills">
+    <div class="skills-left" appFadeInOnScroll from="left">
+      <h2 class="display-lg">Where I'm <span class="accent">strongest</span>?</h2>
+      <p class="muted-p">
+        I build web apps in Angular and React, and write the Node.js API behind them when needed.
+        <strong>Tap a skill</strong> to see how comfortable I am with it.
+      </p>
+
+      @for (t of tiers; track t.tier) {
+        <div class="tier">
+          <span class="tier-label mono">{{ t.tier }}</span>
+          <div class="chips">
+            @for (s of t.items; track s.name) {
+              <button type="button" class="chip mono" [class.active]="skill() === s" (click)="pickSkill(s)">{{ s.name }}</button>
+            }
+          </div>
+        </div>
+      }
+      <p class="fine mono">Levels are my own honest rating, not test scores.</p>
+    </div>
+
+    <div class="gauge-card" appInView (entered)="onGaugeVisible()" appFadeInOnScroll from="right">
+      <svg class="gauge" viewBox="0 0 200 120" role="img" [attr.aria-label]="skill().name + ' ' + skill().level + '%'">
+        <defs>
+          <linearGradient id="gaugeGrad" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="#6d4aff" />
+            <stop offset="1" stop-color="#c4b5fd" />
+          </linearGradient>
+        </defs>
+        <path class="g-track" d="M20 100 A80 80 0 0 1 180 100" />
+        <path class="g-fill" d="M20 100 A80 80 0 0 1 180 100" [attr.stroke-dasharray]="arc"
+          [attr.stroke-dashoffset]="arc * (1 - gauge() / 100)" />
+        <text x="20" y="116" class="g-tick">0</text>
+        <text x="100" y="12" class="g-tick" text-anchor="middle">50</text>
+        <text x="180" y="116" class="g-tick" text-anchor="end">100</text>
+        <g [attr.transform]="'rotate(' + (-90 + gauge() * 1.8) + ' 100 100)'">
+          <line x1="100" y1="100" x2="100" y2="36" class="g-needle" />
+        </g>
+        <circle cx="100" cy="100" r="6" class="g-hub" />
+      </svg>
+      <div class="gauge-readout">
+        <span class="g-name">{{ skill().name }}</span>
+        <span class="g-value mono">{{ gauge() }}%</span>
+        <span class="g-tier mono">{{ skillTier() }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
 <section id="experience" class="section container">
-  <header class="section-head" appFadeInOnScroll from="bottom">
-    <span class="kicker">02 — Experience</span>
-    <h2 class="section-title">Where I've made an <em>impact</em>.</h2>
-  </header>
+  <span class="tag mono" appFadeInOnScroll from="bottom"><span class="star">✳</span> Experience</span>
+  <h2 class="display-lg" appFadeInOnScroll from="bottom">Where I've <span class="accent">worked</span></h2>
 
   <ol class="timeline">
     @for (e of experience; track e.company; let i = $index) {
       <li class="timeline-item" [class.open]="openExp() === i" appFadeInOnScroll from="bottom">
         <span class="timeline-dot" [class.live]="e.current"></span>
-        <div class="card exp-card">
+        <div class="exp-card">
           <button type="button" class="exp-head" (click)="toggleExp(i)" [attr.aria-expanded]="openExp() === i">
             <div class="exp-logo">
               @if (e.logo) {
@@ -136,17 +227,15 @@
             </div>
             <div class="exp-title">
               <h3>{{ e.role }}</h3>
-              <p>
-                <strong>{{ e.company }}</strong> · {{ e.location }}
-              </p>
+              <p class="mono">{{ e.company }} · {{ e.location }}</p>
             </div>
-            <div class="exp-period">
+            <div class="exp-period mono">
               @if (e.current) {
-                <span class="badge">Current</span>
+                <span class="badge">Now</span>
               }
               <span>{{ e.period }}</span>
             </div>
-            <svg class="chev" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="chev" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
           </button>
 
           <div class="exp-body">
@@ -159,7 +248,7 @@
               </ul>
               <div class="chips">
                 @for (t of e.tags; track t) {
-                  <span class="chip chip-sm">{{ t }}</span>
+                  <span class="chip chip-static mono">{{ t }}</span>
                 }
               </div>
             </div>
@@ -170,16 +259,17 @@
   </ol>
 </section>
 
-<!-- ============ PROJECTS ============ -->
+<!-- ================= PROJECTS ================= -->
 <section id="projects" class="section container">
-  <header class="section-head" appFadeInOnScroll from="bottom">
-    <span class="kicker">03 — Selected work</span>
-    <h2 class="section-title">Projects I'm <em>proud</em> of.</h2>
-  </header>
+  <span class="tag mono" appFadeInOnScroll from="bottom"><span class="star">✳</span> Projects</span>
+  <h2 class="display-lg" appFadeInOnScroll from="bottom">Things I've <span class="accent">built</span></h2>
+  <p class="muted-p" appFadeInOnScroll from="bottom">
+    Most of these were built at work with my teams. Open one to see what I did and the problems I ran into.
+  </p>
 
-  <div class="filters" role="tablist" appFadeInOnScroll from="bottom">
+  <div class="filters" role="tablist">
     @for (f of filters; track f) {
-      <button type="button" role="tab" class="filter" [class.active]="activeFilter() === f"
+      <button type="button" role="tab" class="filter mono" [class.active]="activeFilter() === f"
         [attr.aria-selected]="activeFilter() === f" (click)="activeFilter.set(f)">
         {{ f === 'Personal project' ? 'Personal' : f }}
       </button>
@@ -188,103 +278,61 @@
 
   <div class="project-grid">
     @for (p of projects(); track p.title; let i = $index) {
-      <article class="card project-card" tabindex="0" (click)="openProject(p)" (keydown.enter)="openProject(p)">
-        <div class="project-top">
-          <span class="project-num">{{ (i + 1).toString().padStart(2, '0') }}</span>
-          <span class="project-cat">{{ p.category }}</span>
+      <article class="project-card" tabindex="0" (click)="openProject(p)" (keydown.enter)="openProject(p)">
+        <div class="pc-top mono">
+          <span class="pc-cat">{{ p.category }}</span>
+          <span class="pc-num">{{ (i + 1).toString().padStart(2, '0') }}</span>
         </div>
-        <h3>{{ p.title }}</h3>
-        <p class="project-company">{{ p.company }}</p>
-        <p class="project-summary">{{ p.summary }}</p>
+        <h3 class="display-sm">{{ p.title }}</h3>
+        <p class="pc-company mono">{{ p.company }}</p>
+        <p class="pc-summary">{{ p.summary }}</p>
         <div class="chips">
           @for (t of p.tech.slice(0, 4); track t) {
-            <span class="chip chip-sm">{{ t }}</span>
+            <span class="chip chip-static mono">{{ t }}</span>
           }
           @if (p.tech.length > 4) {
-            <span class="chip chip-sm chip-more">+{{ p.tech.length - 4 }}</span>
+            <span class="chip chip-static mono">+{{ p.tech.length - 4 }}</span>
           }
         </div>
-        <span class="project-cta">
-          View details
-          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </span>
+        <span class="pc-cta mono">Read more →</span>
       </article>
     }
   </div>
 </section>
 
-<!-- ============ EDUCATION ============ -->
-<section id="education" class="section container">
-  <header class="section-head" appFadeInOnScroll from="bottom">
-    <span class="kicker">04 — Background</span>
-    <h2 class="section-title">Education &amp; <em>credentials</em>.</h2>
-  </header>
-
-  <div class="edu-grid">
-    <article class="card" appFadeInOnScroll from="bottom">
-      <span class="label">Education</span>
-      <h3>Bachelor's Degree</h3>
-      <p class="muted">Osmania University · 2013 — 2016</p>
-    </article>
-    <article class="card" appFadeInOnScroll from="bottom">
-      <span class="label">Certifications · NxtWave</span>
-      <ul class="ticks compact">
-        @for (c of certificates; track c) {
-          <li>{{ c }}</li>
-        }
-      </ul>
-    </article>
-    <article class="card" appFadeInOnScroll from="bottom">
-      <span class="label">Languages</span>
-      <ul class="lang-list">
-        @for (l of languages; track l.name) {
-          <li><span>{{ l.name }}</span><span class="muted">{{ l.level }}</span></li>
-        }
-      </ul>
-    </article>
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="section container contact">
+  <span class="tag mono" appFadeInOnScroll from="bottom"><span class="star">✳</span> Contact</span>
+  <h2 class="contact-title" appFadeInOnScroll from="bottom">
+    <span>Let's build</span>
+    <span class="accent">something good</span>
+  </h2>
+  <p class="muted-p center" appFadeInOnScroll from="bottom">
+    I'm looking for frontend or full-stack roles. If you think I could help your team, send me an email.
+  </p>
+  <a class="contact-email mono" [href]="'mailto:' + profile.email" appFadeInOnScroll from="bottom">{{ profile.email }}</a>
+  <div class="socials" appFadeInOnScroll from="bottom">
+    <a class="btn btn-ghost mono" [href]="profile.linkedin" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <a class="btn btn-ghost mono" [href]="profile.github" target="_blank" rel="noopener">GitHub ↗</a>
+    <a class="btn btn-primary mono" [href]="profile.resume" download>Resume (PDF) ↓</a>
   </div>
 </section>
 
-<!-- ============ CONTACT ============ -->
-<section id="contact" class="section container">
-  <div class="contact card" appFadeInOnScroll from="bottom">
-    <span class="kicker">05 — Contact</span>
-    <h2 class="contact-title">Have a project in mind?<br /><em>Let's build it together.</em></h2>
-    <p class="section-sub">
-      I'm open to frontend and full-stack roles and freelance collaborations. The fastest way to reach me is email.
-    </p>
-    <a class="contact-email" [href]="'mailto:' + profile.email">{{ profile.email }}</a>
-    <div class="socials">
-      <a class="btn btn-ghost" [href]="profile.linkedin" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4V21H3V9.75Zm6.5 0h3.83v1.54h.05c.53-1 1.84-2.05 3.79-2.05 4.05 0 4.8 2.66 4.8 6.13V21h-4v-4.9c0-1.17-.02-2.68-1.63-2.68-1.64 0-1.89 1.28-1.89 2.6V21h-4V9.75Z"/></svg>
-        LinkedIn
-      </a>
-      <a class="btn btn-ghost" [href]="profile.github" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
-        GitHub
-      </a>
-      <a class="btn btn-ghost" [href]="profile.resume" download>Résumé (PDF)</a>
-    </div>
-  </div>
-</section>
-
-<footer class="footer container">
+<footer class="footer container mono">
   <span>© {{ year }} {{ profile.name }}</span>
-  <span class="muted">Designed &amp; built with Angular</span>
+  <span>Built by me with Angular. Source on <a [href]="profile.github" target="_blank" rel="noopener" class="text-link">GitHub</a>.</span>
 </footer>
 
-<!-- ============ PROJECT MODAL ============ -->
+<!-- ================= PROJECT MODAL ================= -->
 @if (selected(); as p) {
   <div class="modal-backdrop" (click)="closeProject()"></div>
   <div class="modal" role="dialog" aria-modal="true" [attr.aria-label]="p.title">
-    <button type="button" class="modal-close" (click)="closeProject()" aria-label="Close">
-      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-    </button>
-    <span class="project-cat">{{ p.category }} · {{ p.company }}</span>
+    <button type="button" class="modal-close" (click)="closeProject()" aria-label="Close">✕</button>
+    <span class="pc-cat mono">{{ p.company }}</span>
     <h3 class="modal-title">{{ p.title }}</h3>
-    <p class="lead small">{{ p.summary }}</p>
+    <p class="modal-summary">{{ p.summary }}</p>
 
-    <h4>Key features</h4>
+    <h4 class="mono">What I worked on</h4>
     <ul class="ticks">
       @for (f of p.features; track f) {
         <li>{{ f }}</li>
@@ -292,7 +340,7 @@
     </ul>
 
     @if (p.challenges?.length) {
-      <h4>Challenges &amp; solutions</h4>
+      <h4 class="mono">Problems I had to solve</h4>
       <ul class="ticks">
         @for (c of p.challenges; track c) {
           <li>{{ c }}</li>
@@ -300,15 +348,15 @@
       </ul>
     }
 
-    <h4>Tech stack</h4>
+    <h4 class="mono">Built with</h4>
     <div class="chips">
       @for (t of p.tech; track t) {
-        <span class="chip">{{ t }}</span>
+        <span class="chip chip-static mono">{{ t }}</span>
       }
     </div>
 
     @if (p.link) {
-      <a class="btn btn-primary mt" [href]="p.link" target="_blank" rel="noopener">Open live site ↗</a>
+      <a class="btn btn-primary mono mt" [href]="p.link" target="_blank" rel="noopener">Try it live ↗</a>
     }
   </div>
 }

@@ -9,10 +9,10 @@ import { PROFILE } from '../portfolio.data';
 export class NavbarComponent {
   readonly profile = PROFILE;
   readonly links = [
+    { id: 'about', label: 'About' },
     { id: 'skills', label: 'Skills' },
     { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
-    { id: 'education', label: 'Education' },
     { id: 'contact', label: 'Contact' },
   ];
 

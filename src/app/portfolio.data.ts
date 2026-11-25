@@ -1,4 +1,4 @@
-// Single source of truth for all portfolio content (sourced from the resume).
+// All the text on the site lives here. Edit this file to update the portfolio.
 
 export interface Experience {
   company: string;
@@ -34,119 +34,137 @@ export const PROFILE = {
   resume: 'assets/Mahendra-resume.pdf',
   photo: 'assets/profile-pic.jpg',
   summary:
-    'Frontend-focused engineer with 4+ years building responsive, scalable, high-performance web applications in Angular, React and TypeScript — with the Node.js and Express know-how to own features end to end.',
+    "I've been building web apps for a little over four years, mostly in Angular and React with TypeScript. I care about pages that load fast and code the next person can actually read. When a feature needs an API, I'm happy to write the Node.js side too.",
 };
 
 export const STATS = [
-  { to: 4, suffix: '+', label: 'Years of experience' },
-  { to: 50, suffix: 'k+', label: 'Users served' },
-  { to: 30, suffix: '%', label: 'Faster initial load' },
-  { to: 40, suffix: '%', label: 'Fewer regression bugs' },
+  { to: 4, suffix: '+', label: 'Years building for the web' },
+  { to: 50, suffix: 'k+', label: 'People using apps I worked on' },
+  { to: 30, suffix: '%', label: 'Faster first load at Flip Health' },
+  { to: 40, suffix: '%', label: 'Fewer regression bugs after adding tests' },
 ];
 
-/** Self-assessed proficiency (0–100) — tweak freely. */
-export const SKILL_LEVELS = [
-  { name: 'Angular', level: 92 },
-  { name: 'TypeScript', level: 90 },
-  { name: 'HTML & CSS / SCSS', level: 95 },
-  { name: 'React', level: 85 },
-  { name: 'RxJS & State (NGXS, Redux)', level: 85 },
-  { name: 'Tailwind CSS & Bootstrap', level: 90 },
-  { name: 'Node.js & Express', level: 78 },
-  { name: 'MySQL & Sequelize', level: 72 },
-  { name: 'Testing (Jasmine, Karma)', level: 75 },
-  { name: 'DevOps (Git, CI/CD, AWS)', level: 65 },
+/** Big words in the scrolling strip. */
+export const MARQUEE_WORDS = ['Angular', 'React', 'TypeScript', 'RxJS', 'Node.js', 'Slate.js', 'Tailwind', 'Performance', 'Testing'];
+
+/** Skills shown with the gauge. Levels are my own honest rating, 0 to 100. */
+export const SKILL_TIERS = [
+  {
+    tier: 'Expert',
+    items: [
+      { name: 'Angular', level: 92 },
+      { name: 'TypeScript', level: 90 },
+      { name: 'JavaScript', level: 90 },
+      { name: 'HTML / SCSS', level: 95 },
+      { name: 'Tailwind CSS', level: 90 },
+    ],
+  },
+  {
+    tier: 'Advanced',
+    items: [
+      { name: 'React', level: 85 },
+      { name: 'RxJS', level: 85 },
+      { name: 'Angular Material', level: 85 },
+      { name: 'Bootstrap', level: 88 },
+      { name: 'NGXS / Redux', level: 80 },
+      { name: 'Slate.js', level: 80 },
+      { name: 'Git', level: 85 },
+      { name: 'Jasmine / Karma', level: 75 },
+    ],
+  },
+  {
+    tier: 'Comfortable',
+    items: [
+      { name: 'Node.js', level: 78 },
+      { name: 'Express', level: 78 },
+      { name: 'MySQL', level: 72 },
+      { name: 'Sequelize', level: 70 },
+      { name: 'Next.js', level: 70 },
+      { name: 'AWS', level: 60 },
+      { name: 'Jenkins', level: 60 },
+      { name: 'Docker', level: 55 },
+    ],
+  },
 ];
 
-export const SKILL_GROUPS = [
+/** "What sets me apart" cards. icon: speed | shield | blocks | stack */
+export const STRENGTHS = [
   {
-    title: 'Frontend',
-    items: ['Angular', 'React', 'TypeScript', 'JavaScript', 'Next.js', 'HTML', 'CSS / SCSS'],
+    icon: 'speed',
+    title: 'Fast by default',
+    text: 'I measure before I touch anything. At Flip Health, lazy loading, caching and code splitting took 30% off the first load and improved Core Web Vitals.',
   },
   {
-    title: 'State & UI',
-    items: ['RxJS', 'NGXS', 'Redux', 'Slate.js', 'Angular Material', 'Tailwind CSS', 'Bootstrap', 'PrimeReact'],
+    icon: 'shield',
+    title: 'Tested before it ships',
+    text: 'I write the tests alongside the feature. Our Jasmine and Karma suites cut regression bugs by about 40% and made releases a lot calmer.',
   },
   {
-    title: 'Backend & Data',
-    items: ['Node.js', 'Express.js', 'Sequelize', 'MySQL', 'SQL', 'MongoDB', 'REST APIs'],
+    icon: 'blocks',
+    title: 'Built to be reused',
+    text: 'Shared component libraries, one filter component instead of ten, an editor we own instead of a library we fight. Less code for the next person.',
   },
   {
-    title: 'DevOps & Quality',
-    items: ['Git', 'Docker', 'Jenkins', 'GitHub Actions', 'AWS (EC2, S3, Lambda)', 'Terraform', 'Jasmine', 'Karma', 'Jira', 'Agile / Scrum'],
+    icon: 'stack',
+    title: 'Screen to database',
+    text: 'When a feature needs an API, I write it in Node.js and Express with Sequelize and MySQL, so one person can see it through end to end.',
   },
-];
-
-export const MARQUEE = [
-  { name: 'Angular', img: 'angularjs' },
-  { name: 'React', img: 'atom' },
-  { name: 'JavaScript', img: 'java-script-logo' },
-  { name: 'Tailwind CSS', img: 'icons8-tailwind-css-50' },
-  { name: 'Bootstrap', img: 'bootstrap' },
-  { name: 'HTML5', img: 'html' },
-  { name: 'CSS3', img: 'css-3' },
-  { name: 'Node.js', img: 'developer' },
-  { name: 'Express', img: 'icons8-express-js-48' },
-  { name: 'MySQL', img: 'mysql' },
-  { name: 'Sequelize', img: 'sequelize' },
-  { name: 'Terraform', img: 'terraform' },
-  { name: 'AWS', img: 'file' },
 ];
 
 export const EXPERIENCE: Experience[] = [
   {
     company: 'Tech Navitas',
     role: 'Java Frontend Developer',
-    period: 'Dec 2025 — Present',
+    period: 'Dec 2025 – Present',
     location: 'US-based company',
     initials: 'TN',
     current: true,
     blurb:
-      'Building HEBA (Healthcare Hub for Enterprise Benefits Administration), an enterprise platform that automates healthcare benefit management across organizations, plans and user groups.',
+      "I work on HEBA (Healthcare Hub for Enterprise Benefits Administration). It's a large platform that companies use to manage healthcare benefits for their employees across many organizations, plans and user groups.",
     highlights: [
-      'Built a full-featured rich text editor from scratch with Slate.js — custom formatting, nested lists and dynamic tables — removing the dependency on third-party editors.',
-      'Delivered centralized benefit workflows with role-based access, configurable validations, effective-dated configurations and reporting modules.',
-      'Managed complex state across deeply nested trees with React hooks and Context API, eliminating prop-drilling.',
-      'Wired RxJS observables and Angular services for real-time data streaming and reactive UI updates.',
-      'Organized a large monolithic front end into scoped feature folders, shared libraries and core modules — faster onboarding, safer changes.',
-      'Shipped on schedule with a US onshore team through Agile sprint planning, standups and retros (Jira, Teams).',
+      'Wrote a rich text editor from scratch on Slate.js with custom formatting, nested lists and tables, so the app no longer depends on a third-party editor.',
+      'Built benefit workflows with role-based access, configurable validations, effective-dated settings and reports.',
+      'Moved deeply nested React state into hooks and Context, which got rid of a lot of prop-drilling.',
+      'Used RxJS and Angular services to push live data into the UI and keep business logic out of the components.',
+      'Work inside a big monolithic codebase with shared modules and central routing, adding features without breaking what is already there.',
+      'Plan, demo and ship every sprint with the onshore team in the US over Jira and Teams.',
     ],
     tags: ['Angular', 'React', 'TypeScript', 'Slate.js', 'RxJS', 'Bootstrap'],
   },
   {
     company: 'Flip Health',
     role: 'Software Development Engineer II',
-    period: 'Jan 2022 — Mar 2025',
-    location: 'Health-tech · Hyderabad',
+    period: 'Jan 2022 – Mar 2025',
+    location: 'Health-tech, Hyderabad',
     logo: 'assets/download.png',
     initials: 'FH',
     blurb:
-      'Led front-end development in Angular and React for healthcare platforms serving 50k+ users.',
+      'I led frontend work on Flip Health\'s healthcare apps in Angular and React. These were used by more than 50,000 people.',
     highlights: [
-      'Cut initial load time by 30% with lazy loading, caching and code-splitting, improving Core Web Vitals.',
-      'Built Jasmine/Karma UI test suites that reduced regression bugs by 40%.',
-      'Created reusable component libraries that accelerated feature delivery across multiple apps.',
-      'Built RESTful APIs with Node.js, Express, Sequelize and MySQL.',
-      'Mentored 3 junior developers — PR turnaround improved by 50%.',
-      'Introduced Git workflows that cut merge conflicts by 30%; worked with Jenkins, GitHub Actions and Terraform on AWS.',
-      'Partnered with design and product to lift feature adoption by 15%; contributed to AI-powered automation features.',
+      'Brought initial load time down by 30% with lazy loading, caching and code splitting.',
+      'Wrote Jasmine and Karma test suites, which cut regression bugs by about 40%.',
+      'Built a shared component library that several of our apps used.',
+      'Wrote REST APIs in Node.js and Express with Sequelize and MySQL.',
+      'Mentored three junior developers. Our PR turnaround got about twice as fast.',
+      'Set up a Git branching and review workflow that reduced merge conflicts by 30%. Also worked with Jenkins, GitHub Actions and Terraform on AWS.',
+      'Worked closely with design and product on user journeys, and helped build some AI features for digitising healthcare workflows.',
     ],
     tags: ['Angular', 'React', 'Node.js', 'MySQL', 'AWS', 'Jasmine'],
   },
   {
     company: 'NxtWave',
-    role: 'Full Stack Developer — Apprenticeship',
-    period: 'Apr 2021 — Dec 2021',
-    location: 'Ed-tech · Hyderabad',
+    role: 'Full Stack Developer (Apprenticeship)',
+    period: 'Apr 2021 – Dec 2021',
+    location: 'Ed-tech, Hyderabad',
     logo: 'assets/download-1.png',
     initials: 'NW',
     blurb:
-      'Intensive full-stack program building and shipping real applications end to end.',
+      'This is where I learned to build full apps end to end, frontend and backend.',
     highlights: [
-      'Built full-stack apps with MongoDB, Express, React, Node.js, MySQL and Python.',
-      'Shipped e-commerce and task-management apps integrating frontend and backend.',
-      'Implemented role-based dashboards, dynamic routing and state management in Next.js.',
-      'Designed CRUD-focused REST APIs and practiced disciplined Git workflows.',
+      'Built small full-stack apps with MongoDB, Express, React, Node.js, MySQL and Python.',
+      'Made an e-commerce site and a task manager that tied the frontend and backend together.',
+      'Built role-based dashboards with routing and state management in Next.js.',
+      'Got comfortable with REST API design, CRUD and working in Git with a team.',
     ],
     tags: ['React', 'Next.js', 'Node.js', 'MongoDB', 'Python'],
   },
@@ -154,67 +172,69 @@ export const EXPERIENCE: Experience[] = [
 
 export const PROJECTS: Project[] = [
   {
-    title: 'HEBA — Benefits Administration',
+    title: 'HEBA Benefits Platform',
     company: 'Tech Navitas',
-    category: 'Enterprise · Healthcare',
+    category: 'Enterprise, healthcare',
     summary:
-      'An enterprise healthcare and benefits administration platform that streamlines employee and member benefit management across multiple organizations, plans and user groups.',
+      "The platform I work on today. Employers use it to run healthcare benefits for their staff: who is enrolled in what, which rules apply and when changes take effect.",
     features: [
-      'Role-based access and configurable validation rules per organization.',
-      'Effective-dated configurations so plan changes roll out on the right day.',
-      'Reporting modules that improve data accuracy and regulatory compliance.',
-      'Standalone, loosely coupled components with a single source of truth for data.',
+      'Screens that change based on the user\'s role and permissions.',
+      'Validation rules that each organization can configure for itself.',
+      'Effective-dated settings, so a plan change goes live on the right day.',
+      'Reports that help with data accuracy and compliance.',
+      'Standalone components that don\'t depend on their parent, with one source of truth for data.',
     ],
     tech: ['Angular', 'React', 'TypeScript', 'RxJS', 'Bootstrap'],
   },
   {
     title: 'Rich Text Editor',
     company: 'Tech Navitas',
-    category: 'Component · Editor',
+    category: 'Reusable component',
     summary:
-      'A full-featured rich text editor built from scratch on Slate.js, replacing third-party editor libraries and giving the product full control over UX.',
+      'We needed an editor we fully controlled, so I built one from scratch on Slate.js instead of pulling in another third-party library.',
     features: [
-      'Custom inline and block formatting with keyboard shortcuts.',
-      'Nested ordered and unordered lists with correct indent/outdent behaviour.',
-      'Dynamic tables — insert and remove rows and columns in place.',
-      'Serializable document model that plugs straight into existing forms.',
+      'Custom text formatting.',
+      'Nested ordered and unordered lists.',
+      'Tables where you can add and remove rows and columns.',
+      'Drops into the existing forms in the app.',
     ],
     tech: ['React', 'Slate.js', 'TypeScript'],
   },
   {
     title: 'Admin Web Application',
     company: 'Flip Health',
-    category: 'Internal tools',
+    category: 'Internal tool',
     summary:
-      'A scalable admin application with granular role-based access for support, marketing and operations teams.',
+      "The internal admin app that Flip Health's support, marketing and operations teams used every day. Each team only sees the parts it has permission for.",
     features: [
-      'Real-time messaging, notifications and support-ticket chat via Firebase.',
-      'Bulk import pipeline for large data sets, cutting manual data entry.',
-      'Support agents can raise orders on behalf of patients.',
-      'Order-level notes component that keeps cross-team context in one place.',
+      'Real-time chat between customers and support agents, plus notifications, using Firebase.',
+      'Bulk import for large data sets, so people stopped entering rows by hand.',
+      'Support agents can place orders on behalf of patients.',
+      'A notes panel on each order, so teams stopped losing context in other chat apps.',
+      'Debounced search inputs and API calls to avoid unnecessary requests.',
     ],
     challenges: [
-      'Replaced per-module filter UIs with one configurable filter component and service that builds API query params — consistent UX, far less duplicated code.',
-      'Centralized success/error feedback using HTTP interceptors and a BehaviorSubject-driven notification component.',
-      'Modelled complex nested health-plan data with nested Reactive Form groups for reliable plan creation.',
+      'Every module had built its own filter UI, so they all looked different and the code was copied everywhere. I replaced them with one filter component and a shared service. A module passes in its config, and the component builds the right UI and query parameters.',
+      'Success and error snackbars were also written separately in every component. I moved this into an HTTP interceptor and a small notification service, so every API call gives the same kind of feedback.',
+      "Health plans have deeply nested data (features, price tiers, coverage). I modelled them with nested reactive form groups so the form matched what the backend expected.",
     ],
     tech: ['Angular 13', 'RxJS', 'Angular Material', 'ApexCharts', 'Firebase', 'Jasmine'],
   },
   {
     title: 'Client Admin Panel',
     company: 'Flip Health',
-    category: 'B2B · Dashboard',
+    category: 'B2B dashboard',
     summary:
-      'A self-service panel for client organizations to manage employees, billing, orders, consultations and support from one place.',
+      'A panel for our client companies to look after their own employees: billing, orders, doctor consultations and support tickets, all in one place.',
     features: [
-      'Employee management with roles and activity tracking.',
-      'Invoices, payment status and billing reports.',
-      'Consultation scheduling and support ticket tracking.',
-      'Usage dashboard: onboarded employees, tickets, orders and cancellations.',
+      'Add, edit and remove employees and assign them roles.',
+      'See invoices and payment status, and download billing reports.',
+      'Book and cancel consultations, and raise and follow support tickets.',
+      'A dashboard showing employees onboarded, tickets, orders and cancellations.',
     ],
     challenges: [
-      'Built a dynamic, client-specific authorization model with strict data segregation, making new client onboarding scalable.',
-      'Fixed slow dashboard loads by removing redundant API calls, lazy loading modules and adopting OnPush change detection.',
+      'Each client had a different team structure and different permission needs. I built a role system where permissions are assigned per client, and each client can only ever see its own data. Onboarding a new client became mostly configuration.',
+      'As the panel grew, the dashboard got slow. Using browser dev tools I found extra API calls and too much change detection. Removing those calls, lazy loading modules and switching to OnPush made it noticeably faster.',
     ],
     tech: ['Angular 14', 'RxJS', 'Tailwind CSS', 'Angular Material', 'ApexCharts'],
   },
@@ -223,25 +243,25 @@ export const PROJECTS: Project[] = [
     company: 'Flip Health',
     category: 'Customer-facing',
     summary:
-      'A guided onboarding experience: sign up, compare health plans, pay securely and upgrade any time.',
+      'The sign-up journey for new customers: create an account, compare plans, pay, and upgrade later if they want.',
     features: [
-      'Step-by-step registration and onboarding.',
-      'Plan browsing and side-by-side comparison.',
-      'Razorpay checkout with secure payment handling.',
-      'Subscription management and in-place plan upgrades.',
+      'Step-by-step registration.',
+      'Plan list and comparison.',
+      'Payments through Razorpay.',
+      'Plan upgrades and subscription management after purchase.',
     ],
     tech: ['Angular 17', 'RxJS', 'Tailwind CSS', 'Razorpay', 'Firebase'],
   },
   {
-    title: 'AI Medical Analysis',
+    title: 'AI Medical Report Analysis',
     company: 'Flip Health',
-    category: 'AI · Healthcare',
+    category: 'AI, healthcare',
     summary:
-      'A platform that analyzes test results, summarizes medical reports and flags potential heart irregularities from ECGs using fine-tuned Hugging Face models.',
+      'A web app that reads medical test results and reports, writes a short summary, and flags possible heart irregularities in ECGs. It runs on models we fine-tuned from Hugging Face.',
     features: [
-      'DTR analysis that interprets detailed test reports automatically.',
-      'Report analyzer producing plain-language summaries.',
-      'ECG analyzer that highlights potential irregularities.',
+      'Reads and interprets detailed test reports (DTR).',
+      'Summarises medical reports in plain language.',
+      'Checks ECGs and highlights possible irregularities.',
     ],
     tech: ['React', 'TypeScript', 'Redux', 'Tailwind CSS', 'Hugging Face'],
   },
@@ -250,11 +270,11 @@ export const PROJECTS: Project[] = [
     company: 'Personal project',
     category: 'Side project',
     summary:
-      'A fast, responsive movie discovery app on the TMDB API with trending titles driven by real search activity.',
+      'A small app I built for fun to try React 19 and Vite 7. You can search movies from the TMDB API, and the trending list is based on what people actually search for.',
     features: [
-      'Search and filter movies by name.',
-      'Trending list computed from tracked searches (Appwrite).',
-      'Robust API error handling and fully responsive UI.',
+      'Search movies by name.',
+      'Trending list built from saved searches (stored in Appwrite).',
+      'Handles API errors gracefully, and works on phone and desktop.',
     ],
     tech: ['React 19', 'Vite 7', 'Tailwind CSS', 'TMDB API', 'Appwrite'],
     link: 'https://movies-web-app-koy7.vercel.app',
@@ -273,5 +293,5 @@ export const LANGUAGES = [
   { name: 'English', level: 'Fluent' },
   { name: 'Telugu', level: 'Native' },
   { name: 'Hindi', level: 'Fluent' },
-  { name: 'Deutsch', level: 'A2' },
+  { name: 'German', level: 'A2' },
 ];

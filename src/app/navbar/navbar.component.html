@@ -14,18 +14,14 @@
 <header class="nav" [class.scrolled]="scrolled()">
   <div class="nav-inner container">
     <button type="button" class="brand" (click)="go('home')" aria-label="Back to top">
-      <img [src]="profile.photo" alt="" width="36" height="36" />
-      <span class="brand-text">
-        <strong>{{ profile.name }}</strong>
-        <small><span class="pulse"></span> Open to work</small>
-      </span>
+      MAHENDRA<span>.</span>
     </button>
 
     <nav class="links" [class.open]="menuOpen()" aria-label="Primary">
       @for (l of links; track l.id) {
         <button type="button" class="link" [class.active]="active() === l.id" (click)="go(l.id)">{{ l.label }}</button>
       }
-      <a class="btn btn-primary btn-sm" [href]="profile.resume" download>Résumé</a>
+      <a class="btn btn-primary btn-sm" [href]="profile.resume" download>Resume</a>
     </nav>
 
     <button type="button" class="burger" [class.open]="menuOpen()" (click)="menuOpen.set(!menuOpen())"

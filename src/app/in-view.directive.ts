@@ -1,8 +1,12 @@
-import { Directive, ElementRef, OnDestroy, afterNextRender, inject } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, OnDestroy, Output, afterNextRender, inject } from '@angular/core';
 
-/** Adds the `in-view` class to the host the first time it enters the viewport. */
+/**
+ * Adds the `in-view` class to the host the first time it enters the viewport,
+ * and emits `entered` at the same moment.
+ */
 @Directive({ selector: '[appInView]' })
 export class InViewDirective implements OnDestroy {
+  @Output() entered = new EventEmitter<void>();
   private observer?: IntersectionObserver;
 
   constructor() {
@@ -12,6 +16,7 @@ export class InViewDirective implements OnDestroy {
         ([entry]) => {
           if (entry.isIntersecting) {
             node.classList.add('in-view');
+            this.entered.emit();
             this.observer?.disconnect();
           }
         },
